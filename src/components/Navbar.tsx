@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -27,7 +26,7 @@ const Navbar = () => {
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Showcase", href: "#showcase" },
+    { name: "Portfolio", href: "#showcase" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -47,9 +46,9 @@ const Navbar = () => {
               href="#hero"
               className="text-white font-display text-xl uppercase tracking-wider"
             >
-              SEBASTIAN
+              DREWVERSE
               <span className="text-xs font-mono tracking-widest block text-metal-400">
-                CUSTOM MOTORCYCLES
+                DESIGN AGENCY
               </span>
             </a>
           </div>
@@ -69,7 +68,7 @@ const Navbar = () => {
               href="#contact"
               className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-md font-mono text-sm transition-all hover:bg-white/20"
             >
-              CONSULT
+              START PROJECT
             </a>
           </div>
 

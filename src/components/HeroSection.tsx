@@ -35,7 +35,7 @@ const HeroSection = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source 
-            src="https://cdn.dribbble.com/userupload/3845137/file/original-0a9773c2fc2fd8d87eb5b69e25d97757.mp4" 
+            src="https://cdn.dribbble.com/userupload/8132900/file/original-ce7edc7add78c536e3eec214b04ca26c.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
@@ -48,13 +48,12 @@ const HeroSection = () => {
       >
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-display font-bold text-white uppercase tracking-wider leading-tight animate-fade-in">
-            ENGINEERING <br />
-            <span className="text-balance">CUSTOM MOTORCYCLE EXCELLENCE</span>
+            CREATIVE <br />
+            <span className="text-balance">DIGITAL SOLUTIONS</span>
           </h1>
           
           <p className="mt-6 md:mt-8 text-lg md:text-xl text-white/80 font-mono max-w-2xl mx-auto animate-fade-in" style={{animationDelay: "200ms"}}>
-            Precision-crafted custom motorcycle parts and expert consulting 
-            for riders who demand extraordinary performance and style.
+            We craft modern, responsive digital experiences for startups and small businesses in Kampala and beyond.
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{animationDelay: "400ms"}}>
@@ -62,7 +61,7 @@ const HeroSection = () => {
               href="#services" 
               className="group px-8 py-3 bg-white text-black font-mono text-sm uppercase tracking-wider rounded-md transition-all hover:bg-white/90 flex items-center"
             >
-              Explore Services
+              Our Services
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             
@@ -70,7 +69,7 @@ const HeroSection = () => {
               href="#about" 
               className="px-8 py-3 bg-transparent border border-white/30 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-white/10 transition-all"
             >
-              About Sebastian
+              About DrewVerse
             </a>
           </div>
         </div>

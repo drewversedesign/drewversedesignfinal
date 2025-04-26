@@ -1,6 +1,6 @@
 
 import { useEffect } from "react";
-import { Wrench, Gauge, HardDrive, Users, ArrowRight } from "lucide-react";
+import { Monitor, Smartphone, Pencil, Briefcase, Layers, Search, ArrowRight } from "lucide-react";
 
 const ServicesSection = () => {
   useEffect(() => {
@@ -25,28 +25,40 @@ const ServicesSection = () => {
 
   const services = [
     {
-      icon: Wrench,
-      title: "Custom Part Design",
+      icon: Monitor,
+      title: "Web Design & Development",
       description:
-        "Bespoke design and fabrication of premium motorcycle parts tailored to your specific requirements and aesthetic vision.",
+        "Custom, responsive websites optimized for performance and user experience, tailored for your business needs.",
     },
     {
-      icon: Gauge,
-      title: "Performance Optimization",
+      icon: Smartphone,
+      title: "Mobile App Development",
       description:
-        "Expert analysis and enhancement of your motorcycle's performance characteristics for improved power, handling, and efficiency.",
+        "Native and cross-platform applications using technologies like React Native and Flutter.",
     },
     {
-      icon: HardDrive,
-      title: "Technical Consultations",
+      icon: Pencil,
+      title: "UI/UX Design",
       description:
-        "In-depth technical consultations to solve complex mechanical challenges and guide your custom build projects.",
+        "User-centric designs that enhance engagement and usability, creating seamless digital experiences.",
     },
     {
-      icon: Users,
-      title: "Workshop Collaborations",
+      icon: Briefcase,
+      title: "Brand Identity & Strategy",
       description:
-        "Collaborate with your existing team to elevate builds with Sebastian's expertise in design, materials, and fabrication techniques.",
+        "Comprehensive branding services, including logo design and market positioning strategies.",
+    },
+    {
+      icon: Layers,
+      title: "Design & Animation",
+      description:
+        "Custom animations and visual designs to elevate your brand storytelling and engagement.",
+    },
+    {
+      icon: Search,
+      title: "SEO Optimization",
+      description:
+        "Strategic optimization to improve search engine rankings and enhance your online visibility.",
     },
   ];
 
@@ -56,21 +68,21 @@ const ServicesSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
             <span className="text-white/80 font-mono text-xs uppercase tracking-wider">
-              Services
+              Our Services
             </span>
           </div>
 
           <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{ animationDelay: "100ms" }}>
-            EXPERT MOTORCYCLE CONSULTING
+            DIGITAL SOLUTIONS
           </h2>
 
           <p className="mt-6 text-white/70 font-mono text-sm leading-relaxed reveal fade-bottom" style={{ animationDelay: "200ms" }}>
-            From concept to creation, Sebastian provides comprehensive consulting services
-            to bring your custom motorcycle vision to life with precision and style.
+            From concept to creation, DrewVerse Design provides comprehensive digital services
+            to bring your vision to life with creativity and precision.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -101,18 +113,17 @@ const ServicesSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <h3 className="text-2xl font-display font-bold text-white mb-4">
-                CUSTOM CONSULTATION PROCESS
+                OUR DESIGN PROCESS
               </h3>
               <p className="text-white/70 font-mono text-sm leading-relaxed">
-                Sebastian's consultation process is tailored to your specific needs and goals. 
-                Whether you're looking to enhance a single component or undertake a comprehensive 
-                build, the approach is methodical and collaborative, ensuring exceptional results.
+                Our approach is collaborative and iterative, ensuring your digital solution 
+                perfectly aligns with your business goals and user needs.
               </p>
               <a
                 href="#contact"
                 className="mt-6 px-8 py-3 bg-white text-black font-mono text-sm uppercase tracking-wider rounded-md hover:bg-white/90 transition-all inline-flex items-center"
               >
-                Book Consultation
+                Start Project
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </div>
@@ -122,8 +133,8 @@ const ServicesSection = () => {
                   <span className="font-mono text-white font-bold">01</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-display font-bold">Initial Assessment</h4>
-                  <p className="text-white/70 font-mono text-sm">Evaluation of current setup and discussion of goals</p>
+                  <h4 className="text-white font-display font-bold">Discovery</h4>
+                  <p className="text-white/70 font-mono text-sm">Understanding your goals and requirements</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -131,8 +142,8 @@ const ServicesSection = () => {
                   <span className="font-mono text-white font-bold">02</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-display font-bold">Design & Planning</h4>
-                  <p className="text-white/70 font-mono text-sm">Detailed proposals with technical specifications</p>
+                  <h4 className="text-white font-display font-bold">Design</h4>
+                  <p className="text-white/70 font-mono text-sm">Creating the perfect user experience</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -140,8 +151,8 @@ const ServicesSection = () => {
                   <span className="font-mono text-white font-bold">03</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-display font-bold">Implementation</h4>
-                  <p className="text-white/70 font-mono text-sm">Precision fabrication and expert installation</p>
+                  <h4 className="text-white font-display font-bold">Development</h4>
+                  <p className="text-white/70 font-mono text-sm">Building with modern technologies</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -149,8 +160,8 @@ const ServicesSection = () => {
                   <span className="font-mono text-white font-bold">04</span>
                 </div>
                 <div>
-                  <h4 className="text-white font-display font-bold">Fine-Tuning</h4>
-                  <p className="text-white/70 font-mono text-sm">Optimization and adjustments for peak performance</p>
+                  <h4 className="text-white font-display font-bold">Deployment</h4>
+                  <p className="text-white/70 font-mono text-sm">Launch and continuous support</p>
                 </div>
               </div>
             </div>

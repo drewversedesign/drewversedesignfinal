@@ -1,5 +1,5 @@
 
-import { Instagram, Facebook, Linkedin, Youtube, ChevronUp } from "lucide-react";
+import { Instagram, Linkedin, ChevronUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,41 +15,31 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div className="mb-8 md:mb-0">
             <a href="#hero" className="text-white font-display text-xl uppercase tracking-wider">
-              SEBASTIAN
+              DREWVERSE
               <span className="text-xs font-mono tracking-widest block text-metal-400">
-                CUSTOM MOTORCYCLES
+                DESIGN AGENCY
               </span>
             </a>
           </div>
           
           <div className="flex space-x-6">
             <a 
-              href="#" 
+              href="https://instagram.com/drewverse_design" 
               className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all"
               aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Instagram className="h-5 w-5 text-white" />
             </a>
             <a 
-              href="#" 
-              className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all"
-              aria-label="Facebook"
-            >
-              <Facebook className="h-5 w-5 text-white" />
-            </a>
-            <a 
-              href="#" 
+              href="https://linkedin.com/in/drew-verse" 
               className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all"
               aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Linkedin className="h-5 w-5 text-white" />
-            </a>
-            <a 
-              href="#" 
-              className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all"
-              aria-label="YouTube"
-            >
-              <Youtube className="h-5 w-5 text-white" />
             </a>
           </div>
         </div>
@@ -58,52 +48,51 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-display font-bold mb-4">About</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-white/70 hover:text-white transition-colors text-sm">Sebastian's Story</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Workshop</a></li>
+              <li><a href="#about" className="text-white/70 hover:text-white transition-colors text-sm">Our Story</a></li>
               <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Team</a></li>
               <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Careers</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Blog</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-white font-display font-bold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Custom Parts</a></li>
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Performance</a></li>
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Consultations</a></li>
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Collaborations</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Web Development</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Mobile Apps</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">UI/UX Design</a></li>
+              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Branding</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-white font-display font-bold mb-4">Resources</h4>
+            <h4 className="text-white font-display font-bold mb-4">Portfolio</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">FAQ</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Blog</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Gallery</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Partners</a></li>
+              <li><a href="#showcase" className="text-white/70 hover:text-white transition-colors text-sm">Latest Work</a></li>
+              <li><a href="#showcase" className="text-white/70 hover:text-white transition-colors text-sm">Case Studies</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Testimonials</a></li>
+              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Clients</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-white font-display font-bold mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li><a href="mailto:consultant@sebastian-moto.com" className="text-white/70 hover:text-white transition-colors text-sm">consultant@sebastian-moto.com</a></li>
-              <li><a href="tel:+15551234567" className="text-white/70 hover:text-white transition-colors text-sm">+1 (555) 123-4567</a></li>
-              <li><span className="text-white/70 text-sm">123 Custom Lane, Motorcycle District, CA 90210</span></li>
+              <li><a href="mailto:drewversedesign@gmail.com" className="text-white/70 hover:text-white transition-colors text-sm">drewversedesign@gmail.com</a></li>
+              <li><a href="tel:+256772653789" className="text-white/70 hover:text-white transition-colors text-sm">+256 772 653 789</a></li>
+              <li><span className="text-white/70 text-sm">Kampala, Uganda</span></li>
             </ul>
           </div>
         </div>
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/50 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Sebastian Custom Motorcycles. All rights reserved.
+            © {new Date().getFullYear()} DrewVerse Design. All rights reserved.
           </p>
           
           <div className="flex space-x-6">
             <a href="#" className="text-white/50 hover:text-white text-sm transition-colors">Privacy Policy</a>
             <a href="#" className="text-white/50 hover:text-white text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-white/50 hover:text-white text-sm transition-colors">Cookie Policy</a>
           </div>
         </div>
         

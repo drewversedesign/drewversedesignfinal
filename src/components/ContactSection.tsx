@@ -41,19 +41,19 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "consultant@sebastian-moto.com",
-      link: "mailto:consultant@sebastian-moto.com",
+      details: "drewversedesign@gmail.com",
+      link: "mailto:drewversedesign@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      details: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      details: "+256 772 653 789",
+      link: "tel:+256772653789",
     },
     {
       icon: MapPin,
-      title: "Workshop",
-      details: "123 Custom Lane, Motorcycle District, CA 90210",
+      title: "Office",
+      details: "Kampala, Uganda",
       link: "https://maps.google.com",
     },
   ];
