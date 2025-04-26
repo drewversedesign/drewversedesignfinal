@@ -14,6 +14,7 @@ import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import StartProject from "./pages/StartProject";
+import CookieConsent from "./components/CookieConsent";
 import { META_TAGS } from "./utils/meta-tags";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <CookieConsent />
       </TooltipProvider>
     </QueryClientProvider>
   );
