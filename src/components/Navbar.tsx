@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -113,6 +114,15 @@ const Navbar = () => {
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
+        <div className="relative w-full">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-6 text-white focus:outline-none z-50"
+            aria-label="Close menu"
+          >
+            <X className="h-8 w-8" />
+          </button>
+        </div>
         <div className="flex flex-col space-y-6 items-center pt-24">
           {navLinks.map((link) => (
             <button
