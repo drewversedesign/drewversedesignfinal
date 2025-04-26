@@ -2,9 +2,11 @@ import { useEffect, useRef } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -21,6 +23,7 @@ const AboutSection = () => {
       revealElements.forEach(el => observer.unobserve(el));
     };
   }, []);
+
   const stats = [{
     icon: Globe,
     value: "20+",
@@ -38,6 +41,7 @@ const AboutSection = () => {
     value: "1+",
     label: "Years Experience"
   }];
+
   return <section id="about" ref={sectionRef} className="md:py-12 bg-gradient-to-b from-black to-metal-900 py-0">
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
@@ -101,10 +105,15 @@ const AboutSection = () => {
         </div>
         
         <div className="mt-8 md:mt-12 relative px-0 md:px-12">
-          <Carousel opts={{
-          align: "start",
-          loop: true
-        }} className="w-full max-w-full md:max-w-xl mx-auto reveal fade-bottom">
+          <Carousel 
+            opts={{
+              align: "start",
+              loop: true,
+              autoplay: true,
+              delay: 3000,
+            }} 
+            className="w-full max-w-full md:max-w-xl mx-auto reveal fade-bottom"
+          >
             <CarouselContent>
               {stats.map((stat, index) => <CarouselItem key={stat.label} className="basis-1/2 md:basis-1/2 lg:basis-1/3 pl-4">
                   <div className="glass-card p-4 md:p-6 h-full" style={{
@@ -129,4 +138,5 @@ const AboutSection = () => {
       </div>
     </section>;
 };
+
 export default AboutSection;
