@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -71,7 +70,6 @@ const Navbar = () => {
     setIsOpen(false);
     
     if (isHash) {
-      // Only use querySelector for hash links
       setTimeout(() => {
         const element = document.querySelector(href);
         if (element) {
@@ -81,10 +79,14 @@ const Navbar = () => {
         }
       }, 100);
     }
-    // For non-hash links like /blog, we don't call querySelector
   };
 
-  return <nav className={cn("fixed top-0 w-full z-50 transition-all duration-300", scrolled ? "bg-black border-b border-white/10 py-3" : "bg-black py-5")}>
+  return <nav className={cn(
+    "fixed top-0 w-full z-50 transition-all duration-300",
+    scrolled 
+      ? "bg-black/70 backdrop-blur-md border-b border-white/10 py-3" 
+      : "bg-transparent backdrop-blur-sm py-5"
+  )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
