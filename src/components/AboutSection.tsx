@@ -1,11 +1,37 @@
-import { useEffect, useRef } from "react";
+
+import { useEffect, useRef, useState } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
+import type { CarouselApi } from "@/components/ui/carousel";
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const [api, setApi] = useState<CarouselApi>();
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Auto-scroll carousel
+  useEffect(() => {
+    if (!api) return;
+
+    // Clear existing interval if it exists
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
+    // Set up autoplay
+    intervalRef.current = setInterval(() => {
+      api.scrollNext();
+    }, 3000); // 3 seconds interval
+
+    // Clean up on unmount
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [api]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -108,10 +134,9 @@ const AboutSection = () => {
           <Carousel 
             opts={{
               align: "start",
-              loop: true,
-              autoplay: true,
-              delay: 3000,
+              loop: true
             }} 
+            setApi={setApi}
             className="w-full max-w-full md:max-w-xl mx-auto reveal fade-bottom"
           >
             <CarouselContent>
