@@ -1,3 +1,4 @@
+
 export const futureWebDesignPost = {
   id: "future-web-design-services",
   title: "The Future of Web Design Services: How DrewVerse Design Paves the Way",
@@ -12,10 +13,10 @@ export const futureWebDesignPost = {
       <h2 class="text-white">Why Do You Require Contemporary Web Design Services</h2>
       <p class="text-white/90">Modern web design isn't just about good looks. It's about creating future-proof websites that function now and will continue to perform in the years to come. At DrewVerse Design, we focus on essential elements:</p>
       <ul class="text-white/90">
-        <li>Mobile responsiveness</li>
-        <li>Optimizing for performance</li>
-        <li>Quick loading times</li>
-        <li>User-centered navigation</li>
+        <li class="text-white/90">Mobile responsiveness</li>
+        <li class="text-white/90">Optimizing for performance</li>
+        <li class="text-white/90">Quick loading times</li>
+        <li class="text-white/90">User-centered navigation</li>
       </ul>
 
       <h2 class="text-white">What Makes Us Stand Out</h2>
@@ -41,9 +42,9 @@ export const futureWebDesignPost = {
       <h2 class="text-white">Ugandan Web Design Solutions</h2>
       <p class="text-white/90">The tech industry in Uganda is expanding rapidly, and DrewVerse Design is at the forefront with:</p>
       <ul class="text-white/90">
-        <li>Low-cost packages tailored to local businesses</li>
-        <li>Deep understanding of the local market</li>
-        <li>International quality standards</li>
+        <li class="text-white/90">Low-cost packages tailored to local businesses</li>
+        <li class="text-white/90">Deep understanding of the local market</li>
+        <li class="text-white/90">International quality standards</li>
       </ul>
 
       <h2 class="text-white">Building Applications and Websites Together</h2>
