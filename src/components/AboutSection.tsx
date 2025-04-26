@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
 import {
@@ -149,6 +150,17 @@ const AboutSection = () => {
             <CarouselPrevious className="absolute -left-4 bg-white/10 hover:bg-white/20 border-white/20" />
             <CarouselNext className="absolute -right-4 bg-white/10 hover:bg-white/20 border-white/20" />
           </Carousel>
+
+          <div className="mt-24 text-center">
+            <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
+              <span className="text-white/80 font-mono text-xs uppercase tracking-wider">
+                Our Work
+              </span>
+            </div>
+            <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{ animationDelay: "100ms" }}>
+              FEATURED PROJECTS
+            </h2>
+          </div>
         </div>
       </div>
     </section>
