@@ -10,7 +10,7 @@ import { ecommerceWebsitesPost } from './ecommerce-websites';
 import { futureWebDesignPost } from './future-web-design';
 
 export const blogPosts = [
-  futureWebDesignPost, // Add new post at the start to feature it
+  futureWebDesignPost,
   whyChoosePost,
   responsiveDesignPost,
   webDesignUgandaPost,
@@ -21,4 +21,15 @@ export const blogPosts = [
   ecommerceWebsitesPost
 ];
 
-export type BlogPost = typeof blogPosts[0];
+export type BlogPost = {
+  id: string;
+  title: string;
+  description: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string;
+  date: string;
+  readTime: string;
+  image: string;
+  content: string;
+};

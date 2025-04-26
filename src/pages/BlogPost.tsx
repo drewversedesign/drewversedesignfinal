@@ -21,6 +21,29 @@ const BlogPost = () => {
     const foundPost = blogPosts.find(post => post.id === id);
     setPost(foundPost);
     window.scrollTo(0, 0);
+
+    // Update meta tags when post changes
+    if (foundPost) {
+      document.title = foundPost.metaTitle || foundPost.title;
+      
+      // Update meta description
+      let metaDescription = document.querySelector('meta[name="description"]');
+      if (!metaDescription) {
+        metaDescription = document.createElement('meta');
+        metaDescription.setAttribute('name', 'description');
+        document.head.appendChild(metaDescription);
+      }
+      metaDescription.setAttribute('content', foundPost.metaDescription || foundPost.description);
+
+      // Update meta keywords
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement('meta');
+        metaKeywords.setAttribute('name', 'keywords');
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.setAttribute('content', foundPost.metaKeywords || '');
+    }
   }, [id]);
   
   if (!post) {
