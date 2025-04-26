@@ -1,3 +1,4 @@
+
 import { Instagram, Linkedin, ChevronUp } from "lucide-react";
 const Footer = () => {
   const scrollToTop = () => {
@@ -50,8 +51,6 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#showcase" className="text-white/70 hover:text-white transition-colors text-sm">Latest Work</a></li>
               <li><a href="#showcase" className="text-white/70 hover:text-white transition-colors text-sm">Case Studies</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Testimonials</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Clients</a></li>
             </ul>
           </div>
           
