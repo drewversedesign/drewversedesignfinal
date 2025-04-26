@@ -43,8 +43,8 @@ const Index = () => {
       <main className="w-full">
         <HeroSection />
         <AboutSection />
-        <ServicesSection />
         <ShowcaseSection />
+        <ServicesSection />
         <ContactSection />
       </main>
       <Footer />
@@ -53,3 +53,4 @@ const Index = () => {
 };
 
 export default Index;
+
