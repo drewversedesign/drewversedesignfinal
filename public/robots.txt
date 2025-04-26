@@ -1,14 +1,19 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemaps
+Sitemap: https://drewversedesign.online/sitemap.xml
+
+# Specific page rules
+Allow: /about
+Allow: /portfolio
+Allow: /services
+Allow: /blog
+Allow: /contact
+Allow: /start-project
+
+# Prevent access to any potential admin areas
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login
