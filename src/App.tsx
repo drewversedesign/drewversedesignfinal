@@ -9,6 +9,11 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import StartProject from "./pages/StartProject";
 import { META_TAGS } from "./utils/meta-tags";
 
 const queryClient = new QueryClient();
@@ -26,9 +31,13 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path={META_TAGS.home.url} element={<Index />} />
+            <Route path={META_TAGS.about.url} element={<About />} />
+            <Route path={META_TAGS.portfolio.url} element={<Portfolio />} />
+            <Route path={META_TAGS.services.url} element={<Services />} />
+            <Route path={META_TAGS.contact.url} element={<Contact />} />
+            <Route path={META_TAGS.startProject.url} element={<StartProject />} />
             <Route path={META_TAGS.blog.url} element={<Blog />} />
             <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
-            {/* Note: Other routes like /about, /services etc will be implemented when their components are ready */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

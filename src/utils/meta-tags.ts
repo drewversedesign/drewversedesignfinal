@@ -1,86 +1,45 @@
-interface MetaTag {
-  title: string;
-  description: string;
-  keywords?: string;
-  h1?: string;
-  url: string;
-}
 
-export const META_TAGS: Record<string, MetaTag> = {
+export const META_TAGS = {
   home: {
-    title: "Creative Website Design Agency | DrewVerse Design | Build Your Online Presence",
-    description: "DrewVerse Design builds stunning websites, tech blogs, e-commerce stores, and portfolios. Transform your ideas into a digital success story with our expert web design services.",
-    keywords: "creative web design, website development, web design agency, professional websites, DrewVerse Design, digital agency, website builders",
-    h1: "Creative Web Design Solutions to Build Your Online Success",
-    url: "/"
+    url: '/',
+    title: 'Creative Website Design Agency | DrewVerse Design | Build Your Online Presence',
+    description: 'DrewVerse Design (https://drewversedesign.online) builds stunning websites, tech blogs, e-commerce stores, and creative portfolios. Transform your ideas into a digital success story with our expert web design services.',
+    h1: 'Creative Web Design Solutions to Build Your Online Success'
   },
   about: {
-    title: "About DrewVerse Design | Expert Web Design & Development Services",
-    description: "Learn about DrewVerse Design — a creative agency passionate about building unique, professional websites. Discover our mission, values, and how we bring your vision to life.",
-    keywords: "web design services, about us, web development company, professional web designers, DrewVerse Design team, creative agency",
-    h1: "About DrewVerse Design: Creativity, Passion, and Innovation",
-    url: "/about"
+    url: '/about',
+    title: 'About DrewVerse Design | Expert Web Design & Development Services',
+    description: 'Learn about DrewVerse Design (https://drewversedesign.online/about) — a creative agency passionate about crafting unique, professional websites. Discover our mission, values, and how we bring your digital vision to life.',
+    h1: 'About DrewVerse Design: Creativity, Passion, and Innovation'
   },
   portfolio: {
-    title: "Web Design Portfolio | DrewVerse Design | Stunning Website Projects",
-    description: "Browse our portfolio of foundation websites, tech blog platforms, corporate sites, tattoo studio websites, portfolios, and e-commerce solutions crafted with creativity and precision.",
-    keywords: "web design portfolio, website projects, design showcase, UI/UX portfolio, DrewVerse Design work",
-    h1: "Our Portfolio: Creative Website Projects That Inspire",
-    url: "/portfolio"
+    url: '/portfolio',
+    title: 'Web Design Portfolio | DrewVerse Design | Stunning Website Projects',
+    description: 'Browse the DrewVerse Design portfolio (https://drewversedesign.online/portfolio) featuring foundation websites, tech blog platforms, corporate websites, tattoo studios, personal portfolios, and e-commerce stores crafted with creativity and precision.',
+    h1: 'Our Portfolio: Creative Website Projects That Inspire'
   },
   services: {
-    title: "Web Design Services | Website Development | DrewVerse Design",
-    description: "Explore our full range of services: website design, web development, branding, e-commerce solutions, portfolio sites, SEO, and more. DrewVerse Design creates websites that drive results.",
-    keywords: "web design services, website development, branding, e-commerce solutions, SEO services, digital marketing",
-    h1: "Expert Web Design and Development Services",
-    url: "/services"
+    url: '/services',
+    title: 'Web Design Services | Website Development | DrewVerse Design',
+    description: 'Explore all the web design and development services at DrewVerse Design (https://drewversedesign.online/services). From website creation to SEO, branding, and e-commerce solutions, we create websites that drive business results.',
+    h1: 'Expert Web Design and Development Services'
   },
   blog: {
-    title: "Web Design Insights & Tips | DrewVerse Design Blog",
-    description: "Stay updated with the latest trends, tips, and strategies in web design and digital marketing. Read the DrewVerse Design Blog to grow your online presence.",
-    keywords: "web design blog, digital marketing tips, website development insights, design trends, DrewVerse Design articles",
-    h1: "Web Design Blog: Insights, Tips, and Trends",
-    url: "/blog"
+    url: '/blog',
+    title: 'Web Design Insights & Tips | DrewVerse Design Blog',
+    description: 'Stay updated with the latest trends, tips, and strategies in web design and digital marketing at the DrewVerse Design Blog (https://drewversedesign.online/blog). Learn how to grow your online presence.',
+    h1: 'Web Design Blog: Insights, Tips, and Trends'
   },
   contact: {
-    title: "Contact DrewVerse Design | Start Your Website Project Today",
-    description: "Get in touch with DrewVerse Design! We're ready to help you design, develop, and launch a powerful online presence. Let's create something extraordinary together.",
-    keywords: "contact us, web design quote, start project, DrewVerse Design contact, website consultation",
-    h1: "Contact DrewVerse Design and Let's Build Your Dream Website",
-    url: "/contact"
+    url: '/contact',
+    title: 'Contact DrewVerse Design | Start Your Website Project Today',
+    description: 'Contact DrewVerse Design (https://drewversedesign.online/contact) and let\'s create a professional website tailored to your goals. We are ready to help you design, develop, and launch your next digital project.',
+    h1: 'Contact DrewVerse Design and Let\'s Build Your Dream Website'
   },
   startProject: {
-    title: "Start Your Project | Work with DrewVerse Design | Get a Free Quote",
-    description: "Ready to bring your vision to life? Start your website project with DrewVerse Design today. Request a free quote and let's build something exceptional.",
-    keywords: "start project, web design quote, website development, free consultation, DrewVerse Design services",
-    h1: "Start Your Project with DrewVerse Design Today",
-    url: "/start-project"
-  }
-};
-
-export const updateMetaTags = (page: keyof typeof META_TAGS) => {
-  const metaData = META_TAGS[page];
-  if (!metaData) return;
-
-  document.title = metaData.title;
-
-  // Update or create meta description
-  let metaDescription = document.querySelector('meta[name="description"]');
-  if (!metaDescription) {
-    metaDescription = document.createElement('meta');
-    metaDescription.setAttribute('name', 'description');
-    document.head.appendChild(metaDescription);
-  }
-  metaDescription.setAttribute('content', metaData.description);
-
-  // Update or create meta keywords
-  if (metaData.keywords) {
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', metaData.keywords);
+    url: '/start-project',
+    title: 'Start Your Project | Work with DrewVerse Design | Get a Free Quote',
+    description: 'Start your web design project today with DrewVerse Design (https://drewversedesign.online/start-project). Request a free quote and turn your ideas into a stunning online experience.',
+    h1: 'Start Your Project with DrewVerse Design Today'
   }
 };
