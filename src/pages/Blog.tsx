@@ -1,8 +1,8 @@
 
 import { BookOpen } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Blog = () => {
   const posts = [

@@ -1,6 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,37 +37,51 @@ const Navbar = () => {
   const navLinks = [
     {
       name: "Home",
-      href: "#hero"
+      href: "#hero",
+      isHash: true
     },
     {
       name: "About",
-      href: "#about"
+      href: "#about",
+      isHash: true
     },
     {
       name: "Portfolio",
-      href: "#showcase"
+      href: "#showcase",
+      isHash: true
     },
     {
       name: "Services",
-      href: "#services"
+      href: "#services",
+      isHash: true
     },
     {
       name: "Blog",
-      href: "/blog"
+      href: "/blog",
+      isHash: false
     },
     {
       name: "Contact",
-      href: "#contact"
+      href: "#contact",
+      isHash: true
     }
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, isHash: boolean) => {
     setIsOpen(false);
-    setTimeout(() => {
-      document.querySelector(href)?.scrollIntoView({
-        behavior: "smooth"
-      });
-    }, 100);
+    
+    if (isHash) {
+      // Only use querySelector for hash links
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    }
+    // For non-hash links like /blog, we don't call querySelector
   };
 
   return <nav className={cn("fixed top-0 w-full z-50 transition-all duration-300", scrolled ? "bg-black border-b border-white/10 py-3" : "bg-black py-5")}>
@@ -79,9 +95,25 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex space-x-8 items-center">
-            {navLinks.map(link => <a key={link.name} href={link.href} className="font-mono text-sm text-white/80 hover:text-white transition-colors hover-underline">
-                {link.name.toUpperCase()}
-              </a>)}
+            {navLinks.map(link => 
+              link.isHash ? (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  className="font-mono text-sm text-white/80 hover:text-white transition-colors hover-underline"
+                >
+                  {link.name.toUpperCase()}
+                </a>
+              ) : (
+                <Link 
+                  key={link.name} 
+                  to={link.href} 
+                  className="font-mono text-sm text-white/80 hover:text-white transition-colors hover-underline"
+                >
+                  {link.name.toUpperCase()}
+                </Link>
+              )
+            )}
             <a href="#contact" className="bg-orange-500 text-white px-5 py-2 rounded-md font-mono text-sm transition-all hover:bg-orange-600">
               START PROJECT
             </a>
@@ -102,10 +134,27 @@ const Navbar = () => {
           </button>
         </div>
         <div className="flex flex-col space-y-6 items-center pt-24">
-          {navLinks.map(link => <button key={link.name} onClick={() => handleNavClick(link.href)} className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center">
-              {link.name.toUpperCase()}
-            </button>)}
-          <button onClick={() => handleNavClick("#contact")} className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center">
+          {navLinks.map(link => 
+            link.isHash ? (
+              <button 
+                key={link.name} 
+                onClick={() => handleNavClick(link.href, link.isHash)} 
+                className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center"
+              >
+                {link.name.toUpperCase()}
+              </button>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center"
+              >
+                {link.name.toUpperCase()}
+              </Link>
+            )
+          )}
+          <button onClick={() => handleNavClick("#contact", true)} className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center">
             CONSULT
           </button>
         </div>
