@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -23,7 +22,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Prevent body scrolling when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -57,8 +55,8 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-white/10 py-3"
-          : "bg-transparent py-5"
+          ? "bg-black border-b border-white/10 py-3"
+          : "bg-black py-5"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,7 +73,6 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 items-center">
             {navLinks.map((link) => (
               <a
@@ -94,7 +91,6 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile Navigation Toggle */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -111,10 +107,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu - Fixed overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-black/95 backdrop-blur-lg flex flex-col z-40 transition-transform duration-300 ease-in-out",
+          "fixed inset-0 bg-black flex flex-col z-40 transition-transform duration-300 ease-in-out",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
