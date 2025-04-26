@@ -30,7 +30,7 @@ const ShowcaseSection = () => {
       description:
         "A dynamic website featuring an interactive portfolio and seamless booking functionality.",
       image:
-        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+        "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(7).png?raw=true",
     },
     {
       title: "Alex Johnson Design Portfolio",
