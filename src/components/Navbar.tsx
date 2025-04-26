@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -132,7 +131,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={cn("fixed inset-0 bg-black flex flex-col z-40 transition-transform duration-300 ease-in-out", isOpen ? "translate-x-0" : "translate-x-full")}>
+      <div className={cn(
+        "fixed inset-0 bg-black/60 backdrop-blur-xl flex flex-col z-40 transition-transform duration-300 ease-in-out", 
+        isOpen ? "translate-x-0" : "translate-x-full"
+      )}>
         <div className="relative w-full">
           <button onClick={() => setIsOpen(false)} className="absolute top-6 right-6 text-white focus:outline-none z-50" aria-label="Close menu">
             <X className="h-8 w-8" />
