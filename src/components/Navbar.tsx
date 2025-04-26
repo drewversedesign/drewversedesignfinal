@@ -23,6 +23,18 @@ const Navbar = () => {
     };
   }, []);
 
+  // Prevent body scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
@@ -30,6 +42,15 @@ const Navbar = () => {
     { name: "Portfolio", href: "#showcase" },
     { name: "Contact", href: "#contact" },
   ];
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+    setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({
+        behavior: "smooth"
+      });
+    }, 100);
+  };
 
   return (
     <nav
@@ -77,7 +98,8 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white focus:outline-none"
+              className="text-white focus:outline-none z-50"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -89,31 +111,29 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - Fixed overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-black/95 backdrop-blur-lg flex flex-col z-40 transition-transform duration-300 ease-in-out pt-24",
+          "fixed inset-0 bg-black/95 backdrop-blur-lg flex flex-col z-40 transition-transform duration-300 ease-in-out",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="flex flex-col space-y-6 items-center pt-10">
+        <div className="flex flex-col space-y-6 items-center pt-24">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.name}
-              href={link.href}
-              className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2"
-              onClick={() => setIsOpen(false)}
+              onClick={() => handleNavClick(link.href)}
+              className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center"
             >
               {link.name.toUpperCase()}
-            </a>
+            </button>
           ))}
-          <a
-            href="#contact"
-            className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600"
-            onClick={() => setIsOpen(false)}
+          <button
+            onClick={() => handleNavClick("#contact")}
+            className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center"
           >
             CONSULT
-          </a>
+          </button>
         </div>
       </div>
     </nav>
