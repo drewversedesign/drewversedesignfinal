@@ -1,7 +1,10 @@
+
 import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current) return;
@@ -14,10 +17,20 @@ const HeroSection = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+
+  return (
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black z-10"></div>
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover" 
+          preload="auto"
+          poster="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true"
+        >
           <source src="https://github.com/drewversedesign/images-for-drewverse-website/raw/refs/heads/main/DREWVERSE%20DESIGN%20UGANDA%20(2).mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -31,29 +44,27 @@ const HeroSection = () => {
           </h1>
           
           <p className="mt-6 md:mt-8 text-lg md:text-xl text-white/80 font-mono max-w-2xl mx-auto animate-fade-in" style={{
-          animationDelay: "200ms"
-        }}>
+            animationDelay: "200ms"
+          }}>
             We craft modern, responsive digital experiences for startups and small businesses in Kampala and beyond.
           </p>
           
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{
-          animationDelay: "400ms"
-        }}>
-            <a href="#services" className="group px-8 py-3 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md transition-all hover:bg-orange-600 flex items-center">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 animate-fade-in" style={{
+            animationDelay: "400ms"
+          }}>
+            <a href="#services" className="w-full sm:w-auto group px-8 py-4 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md transition-all hover:bg-orange-600 flex items-center justify-center">
               Our Services
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             
-            <a href="#about" className="px-8 py-3 bg-transparent border border-white/30 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-white/10 transition-all">
+            <a href="#about" className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-white/10 transition-all text-center">
               About DrewVerse
             </a>
           </div>
         </div>
       </div>
-      
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-float">
-        
-      </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
