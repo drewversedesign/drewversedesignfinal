@@ -1,11 +1,14 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,23 +39,23 @@ const Navbar = () => {
   const navLinks = [
     {
       name: "Home",
-      href: "#hero",
-      isHash: true
+      href: isHomePage ? "#hero" : "/",
+      isHash: isHomePage
     },
     {
       name: "About",
-      href: "#about",
-      isHash: true
+      href: isHomePage ? "#about" : "/#about",
+      isHash: isHomePage
     },
     {
       name: "Portfolio",
-      href: "#showcase",
-      isHash: true
+      href: isHomePage ? "#showcase" : "/#showcase",
+      isHash: isHomePage
     },
     {
       name: "Services",
-      href: "#services",
-      isHash: true
+      href: isHomePage ? "#services" : "/#services",
+      isHash: isHomePage
     },
     {
       name: "Blog",
@@ -61,8 +64,8 @@ const Navbar = () => {
     },
     {
       name: "Contact",
-      href: "#contact",
-      isHash: true
+      href: isHomePage ? "#contact" : "/#contact",
+      isHash: isHomePage
     }
   ];
 
@@ -90,10 +93,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <a href="#hero" className="text-white font-display text-xl uppercase tracking-wider">
+            <Link to="/" className="text-white font-display text-xl uppercase tracking-wider">
               DREWVERSE
               <span className="text-xs font-mono tracking-widest block text-orange-400">DESIGN </span>
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:flex space-x-8 items-center">
@@ -116,9 +119,9 @@ const Navbar = () => {
                 </Link>
               )
             )}
-            <a href="#contact" className="bg-orange-500 text-white px-5 py-2 rounded-md font-mono text-sm transition-all hover:bg-orange-600">
+            <Link to={isHomePage ? "#contact" : "/#contact"} className="bg-orange-500 text-white px-5 py-2 rounded-md font-mono text-sm transition-all hover:bg-orange-600">
               START PROJECT
-            </a>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -138,13 +141,14 @@ const Navbar = () => {
         <div className="flex flex-col space-y-6 items-center pt-24">
           {navLinks.map(link => 
             link.isHash ? (
-              <button 
+              <a 
                 key={link.name} 
+                href={link.href}
                 onClick={() => handleNavClick(link.href, link.isHash)} 
                 className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center"
               >
                 {link.name.toUpperCase()}
-              </button>
+              </a>
             ) : (
               <Link
                 key={link.name}
@@ -156,9 +160,9 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <button onClick={() => handleNavClick("#contact", true)} className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center">
+          <Link to={isHomePage ? "#contact" : "/#contact"} className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center" onClick={() => setIsOpen(false)}>
             CONSULT
-          </button>
+          </Link>
         </div>
       </div>
     </nav>;
