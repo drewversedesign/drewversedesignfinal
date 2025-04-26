@@ -37,21 +37,21 @@ const ShowcaseSection = () => {
       description:
         "An interactive personal portfolio showcasing creative work with advanced animations.",
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+        "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(9).png?raw=true",
     },
     {
       title: "ModernSpace Furniture Store",
       description:
         "A minimalist e-commerce platform with unique product visualization features.",
       image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+        "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(10).png?raw=true",
     },
     {
       title: "Global Hope Foundation",
       description:
         "A non-profit website featuring donation campaigns and community programs.",
       image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+        "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(8).png?raw=true",
     },
   ];
 
