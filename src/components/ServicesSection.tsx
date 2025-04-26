@@ -1,69 +1,48 @@
-
 import { useEffect } from "react";
 import { Monitor, Smartphone, Pencil, Briefcase, Layers, Search, ArrowRight } from "lucide-react";
-
 const ServicesSection = () => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const revealElements = document.querySelectorAll(".reveal");
-    revealElements.forEach((el) => observer.observe(el));
-
+    revealElements.forEach(el => observer.observe(el));
     return () => {
-      revealElements.forEach((el) => observer.unobserve(el));
+      revealElements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  const services = [
-    {
-      icon: Monitor,
-      title: "Web Design & Development",
-      description:
-        "Custom, responsive websites optimized for performance and user experience, tailored for your business needs.",
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile App Development",
-      description:
-        "Native and cross-platform applications using technologies like React Native and Flutter.",
-    },
-    {
-      icon: Pencil,
-      title: "UI/UX Design",
-      description:
-        "User-centric designs that enhance engagement and usability, creating seamless digital experiences.",
-    },
-    {
-      icon: Briefcase,
-      title: "Brand Identity & Strategy",
-      description:
-        "Comprehensive branding services, including logo design and market positioning strategies.",
-    },
-    {
-      icon: Layers,
-      title: "Design & Animation",
-      description:
-        "Custom animations and visual designs to elevate your brand storytelling and engagement.",
-    },
-    {
-      icon: Search,
-      title: "SEO Optimization",
-      description:
-        "Strategic optimization to improve search engine rankings and enhance your online visibility.",
-    },
-  ];
-
-  return (
-    <section id="services" className="py-12 md:py-16 bg-metal-900">
+  const services = [{
+    icon: Monitor,
+    title: "Web Design & Development",
+    description: "Custom, responsive websites optimized for performance and user experience, tailored for your business needs."
+  }, {
+    icon: Smartphone,
+    title: "Mobile App Development",
+    description: "Native and cross-platform applications using technologies like React Native and Flutter."
+  }, {
+    icon: Pencil,
+    title: "UI/UX Design",
+    description: "User-centric designs that enhance engagement and usability, creating seamless digital experiences."
+  }, {
+    icon: Briefcase,
+    title: "Brand Identity & Strategy",
+    description: "Comprehensive branding services, including logo design and market positioning strategies."
+  }, {
+    icon: Layers,
+    title: "Design & Animation",
+    description: "Custom animations and visual designs to elevate your brand storytelling and engagement."
+  }, {
+    icon: Search,
+    title: "SEO Optimization",
+    description: "Strategic optimization to improve search engine rankings and enhance your online visibility."
+  }];
+  return <section id="services" className="md:py-16 bg-metal-900 py-0">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
@@ -72,23 +51,24 @@ const ServicesSection = () => {
             </span>
           </div>
 
-          <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{ animationDelay: "100ms" }}>
+          <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{
+          animationDelay: "100ms"
+        }}>
             DIGITAL SOLUTIONS
           </h2>
 
-          <p className="mt-6 text-white/70 font-mono text-sm leading-relaxed reveal fade-bottom" style={{ animationDelay: "200ms" }}>
+          <p className="mt-6 text-white/70 font-mono text-sm leading-relaxed reveal fade-bottom" style={{
+          animationDelay: "200ms"
+        }}>
             From concept to creation, DrewVerse Design provides comprehensive digital services
             to bring your vision to life with creativity and precision.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="glass-card p-8 group hover:bg-white/15 hover:-translate-y-1 reveal fade-bottom"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
+          {services.map((service, index) => <div key={service.title} className="glass-card p-8 group hover:bg-white/15 hover:-translate-y-1 reveal fade-bottom" style={{
+          animationDelay: `${index * 100}ms`
+        }}>
               <div className="bg-white/10 rounded-full p-3 inline-block mb-6 group-hover:bg-white/20 transition-all">
                 <service.icon className="h-6 w-6 text-white" />
               </div>
@@ -98,18 +78,16 @@ const ServicesSection = () => {
               <p className="text-white/70 font-mono text-sm leading-relaxed mb-6">
                 {service.description}
               </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center text-orange-500 font-mono text-xs uppercase tracking-wider group-hover:text-white transition-colors"
-              >
+              <a href="#contact" className="inline-flex items-center text-orange-500 font-mono text-xs uppercase tracking-wider group-hover:text-white transition-colors">
                 Learn More{" "}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
-            </div>
-          ))}
+            </div>)}
         </div>
 
-        <div className="mt-12 glass p-8 rounded-2xl reveal fade-bottom" style={{ animationDelay: "400ms" }}>
+        <div className="mt-12 glass p-8 rounded-2xl reveal fade-bottom" style={{
+        animationDelay: "400ms"
+      }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-display font-bold text-white mb-4">
@@ -119,10 +97,7 @@ const ServicesSection = () => {
                 Our approach is collaborative and iterative, ensuring your digital solution 
                 perfectly aligns with your business goals and user needs.
               </p>
-              <a
-                href="#contact"
-                className="mt-4 px-8 py-3 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-orange-600 transition-all inline-flex items-center"
-              >
+              <a href="#contact" className="mt-4 px-8 py-3 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-orange-600 transition-all inline-flex items-center">
                 Start Project
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
@@ -168,8 +143,6 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ServicesSection;
