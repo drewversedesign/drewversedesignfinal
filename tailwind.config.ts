@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -30,7 +31,7 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#F97316',
+					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
@@ -78,6 +79,9 @@ export default {
 					800: '#303030',
 					900: '#101010',
 				},
+				orange: {
+					500: '#F97316', // Explicit orange color
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

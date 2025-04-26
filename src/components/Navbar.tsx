@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -66,7 +67,7 @@ const Navbar = () => {
             ))}
             <a
               href="#contact"
-              className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-md font-mono text-sm transition-all hover:bg-white/20"
+              className="bg-orange-500 text-white px-5 py-2 rounded-md font-mono text-sm transition-all hover:bg-orange-600"
             >
               START PROJECT
             </a>
@@ -108,7 +109,7 @@ const Navbar = () => {
           ))}
           <a
             href="#contact"
-            className="mt-6 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-white/20"
+            className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600"
             onClick={() => setIsOpen(false)}
           >
             CONSULT

@@ -100,7 +100,7 @@ const ServicesSection = () => {
               </p>
               <a
                 href="#contact"
-                className="inline-flex items-center text-white/80 font-mono text-xs uppercase tracking-wider group-hover:text-white transition-colors"
+                className="inline-flex items-center text-orange-500 font-mono text-xs uppercase tracking-wider group-hover:text-white transition-colors"
               >
                 Learn More{" "}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -121,7 +121,7 @@ const ServicesSection = () => {
               </p>
               <a
                 href="#contact"
-                className="mt-6 px-8 py-3 bg-white text-black font-mono text-sm uppercase tracking-wider rounded-md hover:bg-white/90 transition-all inline-flex items-center"
+                className="mt-6 px-8 py-3 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-orange-600 transition-all inline-flex items-center"
               >
                 Start Project
                 <ArrowRight className="ml-2 h-4 w-4" />

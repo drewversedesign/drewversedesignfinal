@@ -59,7 +59,7 @@ const HeroSection = () => {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{animationDelay: "400ms"}}>
             <a 
               href="#services" 
-              className="group px-8 py-3 bg-white text-black font-mono text-sm uppercase tracking-wider rounded-md transition-all hover:bg-white/90 flex items-center"
+              className="group px-8 py-3 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md transition-all hover:bg-orange-600 flex items-center"
             >
               Our Services
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

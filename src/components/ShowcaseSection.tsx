@@ -82,7 +82,7 @@ const ShowcaseSection = () => {
         <div className="mt-16 text-center reveal fade-bottom" style={{ animationDelay: "400ms" }}>
           <a
             href="#contact"
-            className="inline-flex items-center px-8 py-3 bg-white text-black font-mono text-sm uppercase tracking-wider rounded-md hover:bg-white/90 transition-all group"
+            className="inline-flex items-center px-8 py-3 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-orange-600 transition-all group"
           >
             Start Your Project
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
