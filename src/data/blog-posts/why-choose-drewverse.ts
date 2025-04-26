@@ -1,7 +1,11 @@
+
 export const whyChoosePost = {
   id: "why-choose-drewverse-design",
   title: "Why Choose DrewVerse Design for Your US, UK, UAE, and Uganda Web Design Solutions",
   description: "Discover why DrewVerse Design is the premier choice for professional web design services across the USA, UK, UAE, and Uganda, delivering exceptional results for businesses of all sizes.",
+  metaTitle: "Why Choose DrewVerse Design for US, UK, UAE, and Uganda Web Design Solutions",
+  metaDescription: "Discover why businesses in the USA, UK, UAE, and Uganda trust DrewVerse Design for professional, affordable web design, SEO, hosting, and app development solutions. Boost your online success today.",
+  metaKeywords: "web design services USA, web design services UK, web design UAE, web design Uganda, affordable website design, small business web design, website hosting and SEO, DrewVerse Design, mobile app development Uganda, professional website solutions, web development company Uganda",
   date: "April 26, 2025",
   readTime: "8 min read",
   image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop&q=60",
@@ -29,20 +33,20 @@ export const whyChoosePost = {
       </ul>
 
       <h2 class="text-white">Customized Solutions for Every Market</h2>
-      <ul>
-        <li><strong>Web design services for USA:</strong> Specializing in clean corporate design and compelling e-commerce.</li>
-        <li><strong>Web design services UK:</strong> Focus on clean, responsive design for vibrant brands.</li>
-        <li><strong>Web Design Solutions in UAE:</strong> Luxury branding and high-end aesthetics.</li>
-        <li><strong>Web Development Uganda:</strong> Professional and affordable website and application solutions, empowering local businesses.</li>
+      <ul class="text-white/90">
+        <li><strong class="text-white">Web design services for USA:</strong> Specializing in clean corporate design and compelling e-commerce.</li>
+        <li><strong class="text-white">Web design services UK:</strong> Focus on clean, responsive design for vibrant brands.</li>
+        <li><strong class="text-white">Web Design Solutions in UAE:</strong> Luxury branding and high-end aesthetics.</li>
+        <li><strong class="text-white">Web Development Uganda:</strong> Professional and affordable website and application solutions, empowering local businesses.</li>
       </ul>
 
       <h2 class="text-white">Genuine Results, Genuine Service</h2>
-      <p>Unlike so many "website design companies" which promise more than they deliver, we at DrewVerse Design are committed to tangible outcomes. Every website is built to a specific end: more traffic, increased engagement, and more sales.</p>
+      <p class="text-white/90">Unlike so many "website design companies" which promise more than they deliver, we at DrewVerse Design are committed to tangible outcomes. Every website is built to a specific end: more traffic, increased engagement, and more sales.</p>
 
       <h2 class="text-white">Website Design Uganda — an emerging market</h2>
-      <p>The digital marketplace is booming in Uganda. DrewVerse Design is committed to being a top website design services and Uganda web development company — delivering professional websites for startups, enterprises, and NGOs.</p>
+      <p class="text-white/90">The digital marketplace is booming in Uganda. DrewVerse Design is committed to being a top website design services and Uganda web development company — delivering professional websites for startups, enterprises, and NGOs.</p>
 
       <h2 class="text-white">Get Started with DrewVerse Design</h2>
-      <p>Ready to reinvent your online presence? Whether you require affordable websites, full-web design services, SEO services, or even knowledge on how a website is created, DrewVerse Design offers you its support. Stop by drewversedesign.online today and discover how a stunningly designed, expertly crafted website can bring your company to new heights.</p>
+      <p class="text-white/90">Ready to reinvent your online presence? Whether you require affordable websites, full-web design services, SEO services, or even knowledge on how a website is created, DrewVerse Design offers you its support. Stop by drewversedesign.online today and discover how a stunningly designed, expertly crafted website can bring your company to new heights.</p>
     `
 };
