@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <a href="#hero" className="text-white font-display text-xl uppercase tracking-wider">
               DREWVERSE
-              <span className="text-xs font-mono tracking-widest block text-orange-400">DESIGN </span>
+              <span className="text-xs font-mono tracking-widest block text-orange-500">DESIGN </span>
             </a>
           </div>
           
