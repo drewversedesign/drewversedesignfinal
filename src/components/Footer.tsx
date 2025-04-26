@@ -18,7 +18,7 @@ const Footer = () => {
           
           <div className="flex space-x-6">
             <a href="https://instagram.com/drewverse_design" className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-              <Instagram className="h-5 w-5 text-white" />
+              <Instagram className="h-5 w-5 text-white bg-transparent" />
             </a>
             <a href="https://linkedin.com/in/drew-verse" className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5 text-white" />
