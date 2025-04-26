@@ -9,12 +9,13 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import { META_TAGS } from "./utils/meta-tags";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
-    document.title = "DrewVerse Design | Creative Digital Agency";
+    document.title = META_TAGS.home.title;
   }, []);
 
   return (
@@ -24,9 +25,10 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path={META_TAGS.home.url} element={<Index />} />
+            <Route path={META_TAGS.blog.url} element={<Blog />} />
+            <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
+            {/* Note: Other routes like /about, /services etc will be implemented when their components are ready */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
