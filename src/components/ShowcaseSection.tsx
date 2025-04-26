@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { CardHoverEffect } from "./ui/card-hover-effect";
 import { ArrowRight } from "lucide-react";
+
 const ShowcaseSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -18,23 +19,25 @@ const ShowcaseSection = () => {
       revealElements.forEach(el => observer.unobserve(el));
     };
   }, []);
+
   const showcaseItems = [{
-    title: "InkMaster Tattoo Studio",
+    title: "Tattoo Studio Website",
     description: "A dynamic website featuring an interactive portfolio and seamless booking functionality.",
     image: "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(7).png?raw=true"
   }, {
-    title: "Alex Johnson Design Portfolio",
+    title: "Portfolio Website",
     description: "An interactive personal portfolio showcasing creative work with advanced animations.",
     image: "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(9).png?raw=true"
   }, {
-    title: "ModernSpace Furniture Store",
+    title: "Furniture Store",
     description: "A minimalist e-commerce platform with unique product visualization features.",
     image: "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(10).png?raw=true"
   }, {
-    title: "Global Hope Foundation",
+    title: "Foundation Website",
     description: "A non-profit website featuring donation campaigns and community programs.",
     image: "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(8).png?raw=true"
   }];
+
   return <section id="showcase" className="bg-gradient-to-b from-metal-900 to-black py-0 md:py-0">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-10">
@@ -75,4 +78,5 @@ const ShowcaseSection = () => {
       </div>
     </section>;
 };
+
 export default ShowcaseSection;
