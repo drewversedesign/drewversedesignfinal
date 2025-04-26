@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -18,6 +20,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -28,22 +31,34 @@ const Navbar = () => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
-  const navLinks = [{
-    name: "Home",
-    href: "#hero"
-  }, {
-    name: "About",
-    href: "#about"
-  }, {
-    name: "Portfolio",
-    href: "#showcase"
-  }, {
-    name: "Services",
-    href: "#services"
-  }, {
-    name: "Contact",
-    href: "#contact"
-  }];
+
+  const navLinks = [
+    {
+      name: "Home",
+      href: "#hero"
+    },
+    {
+      name: "About",
+      href: "#about"
+    },
+    {
+      name: "Portfolio",
+      href: "#showcase"
+    },
+    {
+      name: "Services",
+      href: "#services"
+    },
+    {
+      name: "Blog",
+      href: "/blog"
+    },
+    {
+      name: "Contact",
+      href: "#contact"
+    }
+  ];
+
   const handleNavClick = (href: string) => {
     setIsOpen(false);
     setTimeout(() => {
@@ -52,6 +67,7 @@ const Navbar = () => {
       });
     }, 100);
   };
+
   return <nav className={cn("fixed top-0 w-full z-50 transition-all duration-300", scrolled ? "bg-black border-b border-white/10 py-3" : "bg-black py-5")}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -96,4 +112,5 @@ const Navbar = () => {
       </div>
     </nav>;
 };
+
 export default Navbar;
