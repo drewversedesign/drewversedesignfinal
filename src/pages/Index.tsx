@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -53,4 +52,3 @@ const Index = () => {
 };
 
 export default Index;
-

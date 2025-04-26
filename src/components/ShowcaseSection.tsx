@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { CardHoverEffect } from "./ui/card-hover-effect";
 import { ArrowRight } from "lucide-react";
@@ -56,7 +55,7 @@ const ShowcaseSection = () => {
   ];
 
   return (
-    <section id="showcase" className="py-24 bg-gradient-to-b from-metal-900 to-black">
+    <section id="showcase" className="py-12 md:py-16 bg-gradient-to-b from-metal-900 to-black">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
@@ -94,4 +93,3 @@ const ShowcaseSection = () => {
 };
 
 export default ShowcaseSection;
-

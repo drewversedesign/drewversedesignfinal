@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
+
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
@@ -38,7 +39,7 @@ const AboutSection = () => {
     value: "1+",
     label: "Years Experience"
   }];
-  return <section id="about" className="py-16 md:py-24 bg-gradient-to-b from-black to-metal-900" ref={sectionRef}>
+  return <section id="about" className="py-12 md:py-16 bg-gradient-to-b from-black to-metal-900" ref={sectionRef}>
       <div className="section-container px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
           <div className="order-2 md:order-1">
