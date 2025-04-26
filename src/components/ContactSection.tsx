@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Send, Mail, Phone, MapPin } from "lucide-react";
 import { toast } from "sonner";
+
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,6 +11,7 @@ const ContactSection = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -20,6 +22,7 @@ const ContactSection = () => {
       [name]: value
     }));
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -37,6 +40,7 @@ const ContactSection = () => {
       setIsSubmitting(false);
     }, 1500);
   };
+
   const contactInfo = [{
     icon: Mail,
     title: "Email",
@@ -53,6 +57,7 @@ const ContactSection = () => {
     details: "Kampala, Uganda",
     link: "https://maps.google.com"
   }];
+
   return <section id="contact" className="bg-black py-0">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -74,7 +79,14 @@ const ContactSection = () => {
             </p>
 
             <div className="space-y-6">
-              {contactInfo.map((item, index) => <a key={index} href={item.link} className="flex items-start space-x-4 group" target="_blank" rel="noopener noreferrer">
+              {contactInfo.map((item, index) => (
+                <a 
+                  key={index} 
+                  href={item.link} 
+                  className="flex items-start space-x-4 group" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   <div className="bg-white/10 rounded-full p-3 group-hover:bg-white/20 transition-all">
                     <item.icon className="h-5 w-5 text-white" />
                   </div>
@@ -82,11 +94,12 @@ const ContactSection = () => {
                     <div className="text-white/80 font-mono text-xs uppercase tracking-wider mb-1">
                       {item.title}
                     </div>
-                    <div className="text-white font-display font-bold group-hover:text-white/80 transition-colors">
+                    <div className="text-white font-display font-medium text-sm group-hover:text-white/80 transition-colors">
                       {item.details}
                     </div>
                   </div>
-                </a>)}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -157,4 +170,5 @@ const ContactSection = () => {
       </div>
     </section>;
 };
+
 export default ContactSection;
