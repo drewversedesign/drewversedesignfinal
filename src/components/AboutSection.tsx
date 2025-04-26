@@ -1,7 +1,10 @@
+
 import { useEffect, useRef } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
+
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -12,12 +15,15 @@ const AboutSection = () => {
     }, {
       threshold: 0.1
     });
+
     const revealElements = document.querySelectorAll(".reveal");
     revealElements.forEach(el => observer.observe(el));
+
     return () => {
       revealElements.forEach(el => observer.unobserve(el));
     };
   }, []);
+
   const stats = [{
     icon: Globe,
     value: "20+",
@@ -35,18 +41,19 @@ const AboutSection = () => {
     value: "1+",
     label: "Years Experience"
   }];
+
   return <section id="about" className="py-24 bg-gradient-to-b from-black to-metal-900" ref={sectionRef}>
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div className="order-2 md:order-1">
             <div className="relative">
               <div className="aspect-ratio-4/3 overflow-hidden rounded-lg reveal fade-right">
-                <img alt="Creative workspace with digital design tools" className="w-full h-full object-cover" src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/_sample_website_designs_by_Drewverse_Design._drewversedesign.online___6_-removebg-preview.png?raw=true" />
+                <img alt="Creative workspace with digital design tools" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3" />
               </div>
               <div className="absolute -bottom-8 -right-8 w-64 h-64 rounded-lg overflow-hidden reveal fade-left" style={{
               animationDelay: "200ms"
             }}>
-                <img alt="Web development process" className="w-full h-full object-cover" src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/_sample_website_designs_by_Drewverse_Design._drewversedesign.online___6_-removebg-preview.png?raw=true" />
+                <img alt="Web development process" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3" />
               </div>
               <div className="absolute -top-8 -left-8 glass p-6 rounded-lg reveal fade-bottom" style={{
               animationDelay: "400ms"
@@ -109,4 +116,5 @@ const AboutSection = () => {
       </div>
     </section>;
 };
+
 export default AboutSection;
