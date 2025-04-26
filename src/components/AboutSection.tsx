@@ -1,17 +1,8 @@
-
 import { useEffect, useRef } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -28,36 +19,24 @@ const AboutSection = () => {
       revealElements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  const stats = [
-    {
-      icon: Globe,
-      value: "20+",
-      label: "Projects Completed"
-    },
-    {
-      icon: Users,
-      value: "50+",
-      label: "Happy Clients"
-    },
-    {
-      icon: Briefcase,
-      value: "6+",
-      label: "Services Offered"
-    },
-    {
-      icon: Award,
-      value: "1+",
-      label: "Years Experience"
-    }
-  ];
-
-  return (
-    <section
-      id="about"
-      className="py-24 bg-gradient-to-b from-black to-metal-900"
-      ref={sectionRef}
-    >
+  const stats = [{
+    icon: Globe,
+    value: "20+",
+    label: "Projects Completed"
+  }, {
+    icon: Users,
+    value: "50+",
+    label: "Happy Clients"
+  }, {
+    icon: Briefcase,
+    value: "6+",
+    label: "Services Offered"
+  }, {
+    icon: Award,
+    value: "1+",
+    label: "Years Experience"
+  }];
+  return <section id="about" className="py-24 bg-gradient-to-b from-black to-metal-900" ref={sectionRef}>
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div className="order-2 md:order-1">
@@ -68,7 +47,7 @@ const AboutSection = () => {
               <div className="absolute -bottom-8 -right-8 w-64 h-64 rounded-lg overflow-hidden reveal fade-left" style={{
               animationDelay: "200ms"
             }}>
-                <img alt="Web development process" className="w-full h-full object-cover" src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345766_x-removebg-preview.png?raw=true" />
+                <img alt="Web development process" src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345766_x-removebg-preview.png?raw=true" className="w-full h-full object-scale-down" />
               </div>
               <div className="absolute -top-8 -left-8 glass p-6 rounded-lg reveal fade-bottom" style={{
               animationDelay: "400ms"
@@ -118,22 +97,15 @@ const AboutSection = () => {
         </div>
         
         <div className="mt-24 relative px-12">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-xl mx-auto reveal fade-bottom"
-          >
+          <Carousel opts={{
+          align: "start",
+          loop: true
+        }} className="w-full max-w-xl mx-auto reveal fade-bottom">
             <CarouselContent>
-              {stats.map((stat, index) => (
-                <CarouselItem key={stat.label} className="md:basis-1/2 lg:basis-1/3">
-                  <div
-                    className="glass-card p-6 h-full"
-                    style={{
-                      animationDelay: `${index * 100}ms`,
-                    }}
-                  >
+              {stats.map((stat, index) => <CarouselItem key={stat.label} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="glass-card p-6 h-full" style={{
+                animationDelay: `${index * 100}ms`
+              }}>
                     <div className="bg-white/10 rounded-full p-3 inline-block mb-4">
                       <stat.icon className="h-6 w-6 text-white" />
                     </div>
@@ -144,8 +116,7 @@ const AboutSection = () => {
                       {stat.label}
                     </div>
                   </div>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
             <CarouselPrevious className="absolute -left-4 bg-white/10 hover:bg-white/20 border-white/20" />
             <CarouselNext className="absolute -right-4 bg-white/10 hover:bg-white/20 border-white/20" />
@@ -157,14 +128,14 @@ const AboutSection = () => {
                 Our Work
               </span>
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{ animationDelay: "100ms" }}>
+            <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{
+            animationDelay: "100ms"
+          }}>
               FEATURED PROJECTS
             </h2>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
