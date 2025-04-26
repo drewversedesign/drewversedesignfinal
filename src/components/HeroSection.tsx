@@ -35,7 +35,7 @@ const HeroSection = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source 
-            src="https://github.com/drewversedesign/images-for-drewverse-website/raw/refs/heads/main/large-thumbnail20250314-3311091-biajzu.mp4" 
+            src="https://github.com/drewversedesign/images-for-drewverse-website/raw/refs/heads/main/DREWVERSE%20DESIGN%20UGANDA%20(2).mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
