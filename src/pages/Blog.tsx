@@ -1,6 +1,8 @@
 
 import { BookOpen } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 const Blog = () => {
   const posts = [
@@ -24,46 +26,73 @@ const Blog = () => {
       date: "April 15, 2025",
       readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=800&auto=format&fit=crop&q=60"
+    },
+    {
+      title: "Mobile-First Development",
+      description: "Why prioritizing mobile experiences is crucial in modern web development",
+      date: "April 13, 2025",
+      readTime: "4 min read",
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop&q=60"
+    },
+    {
+      title: "UI/UX Design Trends 2025",
+      description: "Latest trends and innovations in user interface and experience design",
+      date: "April 10, 2025",
+      readTime: "7 min read",
+      image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop&q=60"
+    },
+    {
+      title: "The Power of Design Systems",
+      description: "Building scalable and consistent user interfaces with design systems",
+      date: "April 8, 2025",
+      readTime: "5 min read",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-black pt-24">
-      <div className="section-container">
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-display text-white mb-4">Our Blog</h1>
-          <p className="text-white/70 max-w-2xl mx-auto">
-            Insights, updates, and stories from the DrewVerse team
-          </p>
-        </div>
+    <div className="min-h-screen bg-black">
+      <Navbar />
+      
+      <div className="pt-24">
+        <div className="section-container">
+          <div className="mb-12 text-center">
+            <h1 className="text-4xl md:text-5xl font-display text-white mb-4">Our Blog</h1>
+            <p className="text-white/70 max-w-2xl mx-auto">
+              Insights, updates, and stories from the DrewVerse team
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
-            <Card key={index} className="bg-white/5 border-white/10 hover:bg-white/10 transition-all">
-              <img 
-                src={post.image} 
-                alt={post.title} 
-                className="w-full h-48 object-cover rounded-t-lg"
-              />
-              <CardHeader>
-                <CardTitle className="text-white">{post.title}</CardTitle>
-                <CardDescription className="text-white/70">
-                  {post.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-between text-sm text-white/50">
-                  <div className="flex items-center gap-2">
-                    <BookOpen className="h-4 w-4" />
-                    {post.readTime}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {posts.map((post, index) => (
+              <Card key={index} className="bg-white/5 border-white/10 hover:bg-white/10 transition-all">
+                <img 
+                  src={post.image} 
+                  alt={post.title} 
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+                <CardHeader>
+                  <CardTitle className="text-white">{post.title}</CardTitle>
+                  <CardDescription className="text-white/70">
+                    {post.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between text-sm text-white/50">
+                    <div className="flex items-center gap-2">
+                      <BookOpen className="h-4 w-4" />
+                      {post.readTime}
+                    </div>
+                    <span>{post.date}</span>
                   </div>
-                  <span>{post.date}</span>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
