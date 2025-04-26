@@ -1,16 +1,12 @@
-
 import { Instagram, Linkedin, ChevronUp } from "lucide-react";
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
-
-  return (
-    <footer className="bg-black py-12 border-t border-white/10">
+  return <footer className="bg-black border-t border-white/10 py-0">
       <div className="section-container">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
@@ -23,22 +19,10 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6">
-            <a 
-              href="https://instagram.com/drewverse_design" 
-              className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://instagram.com/drewverse_design" className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <Instagram className="h-5 w-5 text-white" />
             </a>
-            <a 
-              href="https://linkedin.com/in/drew-verse" 
-              className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://linkedin.com/in/drew-verse" className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5 text-white" />
             </a>
           </div>
@@ -96,16 +80,10 @@ const Footer = () => {
           </div>
         </div>
         
-        <button 
-          onClick={scrollToTop}
-          className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all fixed bottom-8 right-8 z-40"
-          aria-label="Scroll to top"
-        >
+        <button onClick={scrollToTop} className="bg-white/5 p-3 rounded-full hover:bg-white/10 transition-all fixed bottom-8 right-8 z-40" aria-label="Scroll to top">
           <ChevronUp className="h-5 w-5 text-white" />
         </button>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
