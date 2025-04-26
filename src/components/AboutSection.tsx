@@ -46,7 +46,7 @@ const AboutSection = () => {
               <div className="absolute -bottom-8 -right-8 w-64 h-64 rounded-lg overflow-hidden reveal fade-left" style={{
               animationDelay: "200ms"
             }}>
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Web development process" className="w-full h-full object-cover" />
+                <img alt="Web development process" className="w-full h-full object-cover" src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/_sample_website_designs_by_Drewverse_Design._drewversedesign.online___6_-removebg-preview.png?raw=true" />
               </div>
               <div className="absolute -top-8 -left-8 glass p-6 rounded-lg reveal fade-bottom" style={{
               animationDelay: "400ms"
