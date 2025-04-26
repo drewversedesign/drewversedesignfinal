@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -132,20 +131,27 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={cn("fixed inset-0 bg-black flex flex-col z-40 transition-transform duration-300 ease-in-out", isOpen ? "translate-x-0" : "translate-x-full")}>
-        <div className="relative w-full">
-          <button onClick={() => setIsOpen(false)} className="absolute top-6 right-6 text-white focus:outline-none z-50" aria-label="Close menu">
-            <X className="h-8 w-8" />
+      <div className={cn(
+        "fixed inset-0 bg-black/60 backdrop-blur-xl flex flex-col z-40 transition-all duration-500 ease-in-out",
+        isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+      )}>
+        <div className="relative w-full px-6 py-8">
+          <button 
+            onClick={() => setIsOpen(false)} 
+            className="absolute top-8 right-6 text-white/80 hover:text-white focus:outline-none z-50 transition-colors" 
+            aria-label="Close menu"
+          >
+            <X className="h-6 w-6" />
           </button>
         </div>
-        <div className="flex flex-col space-y-6 items-center pt-24">
+        <div className="flex flex-col space-y-8 items-center pt-16">
           {navLinks.map(link => 
             link.isHash ? (
               <a 
                 key={link.name} 
                 href={link.href}
                 onClick={() => handleNavClick(link.href, link.isHash)} 
-                className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center"
+                className="text-xl font-display text-white/80 hover:text-white transition-all hover:scale-105 py-2 tracking-wider"
               >
                 {link.name.toUpperCase()}
               </a>
@@ -154,13 +160,17 @@ const Navbar = () => {
                 key={link.name}
                 to={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center"
+                className="text-xl font-display text-white/80 hover:text-white transition-all hover:scale-105 py-2 tracking-wider"
               >
                 {link.name.toUpperCase()}
               </Link>
             )
           )}
-          <Link to={isHomePage ? "#contact" : "/#contact"} className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center" onClick={() => setIsOpen(false)}>
+          <Link 
+            to={isHomePage ? "#contact" : "/#contact"} 
+            className="mt-8 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 hover:scale-105 w-64 text-center" 
+            onClick={() => setIsOpen(false)}
+          >
             CONSULT
           </Link>
         </div>
