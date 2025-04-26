@@ -1,11 +1,10 @@
-
 export const choosingAgencyPost = {
   id: "choosing-design-agency",
   title: "How to Choose the Right Web Design Agency for Your Business",
   description: "Learn the key factors to consider when selecting a web design agency in East Africa, and why DrewVerse Design stands out in the market.",
   metaTitle: "How to Choose the Right Web Design Agency in East Africa | DrewVerse Design",
   metaDescription: "Learn essential factors to consider when choosing a web design agency in East Africa. Discover why DrewVerse Design is the preferred choice for businesses seeking quality digital solutions.",
-  metaKeywords: "web design agency, choosing web designer, East Africa web development, DrewVerse Design, Uganda web agency, professional web services, digital agency selection",
+  metaKeywords: "web design agency selection, choosing web designer, East Africa web development, DrewVerse Design, Uganda web agency, professional web services, digital agency selection, web design partner, business website development",
   date: "April 24, 2025",
   readTime: "6 min read",
   image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=60",

@@ -1,11 +1,10 @@
-
 export const webDesignUgandaPost = {
   id: "web-design-uganda-guide",
   title: "Web Design Services in Uganda: A Complete Guide 2025",
   description: "Discover how DrewVerse Design is revolutionizing web design services in Uganda with modern, responsive, and affordable solutions for businesses.",
   metaTitle: "Web Design Services in Uganda: Complete Guide 2025 | DrewVerse Design",
   metaDescription: "Find the ultimate guide to web design services in Uganda for 2025. Learn how DrewVerse Design is revolutionizing the industry with modern, responsive solutions.",
-  metaKeywords: "web design Uganda, Uganda web services, web development Kampala, responsive website design, professional web solutions, DrewVerse Design, Uganda business websites",
+  metaKeywords: "web design Uganda, Uganda web services, web development Kampala, responsive website design, professional web solutions, DrewVerse Design, Uganda business websites, digital agency Uganda, affordable web design, local web development",
   date: "April 26, 2025",
   readTime: "7 min read",
   image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop&q=60",

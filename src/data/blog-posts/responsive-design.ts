@@ -1,11 +1,10 @@
-
 export const responsiveDesignPost = {
   id: "responsive-web-design-trends",
   title: "Top Responsive Web Design Trends for 2025",
   description: "Discover the latest responsive web design trends that are shaping the digital landscape in Uganda and worldwide.",
   metaTitle: "Top Responsive Web Design Trends for 2025 | DrewVerse Design",
   metaDescription: "Stay ahead with the latest responsive web design trends for 2025. Learn how mobile-first design, fluid typography, and other innovations are reshaping the digital landscape.",
-  metaKeywords: "responsive web design trends, mobile-first design, web design 2025, fluid typography, responsive images, Uganda web design, DrewVerse Design",
+  metaKeywords: "responsive web design trends, mobile-first design, web design 2025, fluid typography, responsive images, Uganda web design, DrewVerse Design, web development trends, mobile optimization, user experience design, adaptive layouts",
   date: "April 26, 2025",
   readTime: "5 min read",
   image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&auto=format&fit=crop&q=60",

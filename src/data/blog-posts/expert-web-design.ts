@@ -1,11 +1,10 @@
-
 export const expertWebDesignPost = {
   id: "expert-web-design-small-business",
   title: "Expert Web Design Services for Small Businesses",
   description: "Discover our affordable and professional web design solutions tailored specifically for small businesses in Uganda and East Africa.",
   metaTitle: "Expert Web Design Services for Small Businesses in Uganda | DrewVerse Design",
   metaDescription: "Find affordable, professional web design services specifically tailored for small businesses in Uganda and East Africa. Start your digital journey with DrewVerse Design.",
-  metaKeywords: "expert web design, small business website, Uganda web design, affordable web design, professional web services, East Africa web development, DrewVerse Design",
+  metaKeywords: "expert web design, small business website, Uganda web design, affordable web design, professional web services, East Africa web development, DrewVerse Design, SME web solutions, local business websites, cost-effective web design",
   date: "April 20, 2025",
   readTime: "6 min read",
   image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop&q=60",

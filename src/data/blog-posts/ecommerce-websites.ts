@@ -1,11 +1,10 @@
-
 export const ecommerceWebsitesPost = {
   id: "ecommerce-websites-uganda",
   title: "Creating Professional E-commerce Websites in Uganda",
   description: "Learn how DrewVerse Design helps businesses in Uganda establish their online presence with custom e-commerce solutions.",
   metaTitle: "Professional E-commerce Website Development in Uganda | DrewVerse Design",
   metaDescription: "Get expert e-commerce website development services in Uganda. Learn how DrewVerse Design creates custom online stores that drive sales for Ugandan businesses.",
-  metaKeywords: "e-commerce website Uganda, online store development, Uganda e-commerce solutions, custom e-commerce website, web development Uganda, DrewVerse Design, online shopping platform",
+  metaKeywords: "e-commerce website Uganda, online store development, Uganda e-commerce solutions, custom e-commerce website, web development Uganda, DrewVerse Design, online shopping platform, e-commerce development, digital commerce, online retail solutions",
   date: "April 16, 2025",
   readTime: "7 min read",
   image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60",

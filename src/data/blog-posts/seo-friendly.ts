@@ -1,11 +1,10 @@
-
 export const seoFriendlyPost = {
   id: "seo-friendly-web-design",
   title: "The Impact of SEO-Friendly Web Design on Business Growth",
   description: "Explore how DrewVerse Design integrates SEO best practices into web design to help Ugandan businesses reach wider audiences.",
   metaTitle: "SEO-Friendly Web Design for Business Growth | DrewVerse Design",
   metaDescription: "Discover how implementing SEO best practices in web design can significantly boost your business growth in Uganda's competitive digital landscape.",
-  metaKeywords: "SEO web design Uganda, business growth, search engine optimization, website development, DrewVerse Design, digital marketing Uganda, website traffic, conversion rate optimization",
+  metaKeywords: "SEO web design Uganda, business growth, search engine optimization, website development, DrewVerse Design, digital marketing Uganda, website traffic, conversion rate optimization, SEO best practices, organic growth",
   date: "April 22, 2025",
   readTime: "5 min read",
   image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=800&auto=format&fit=crop&q=60",
