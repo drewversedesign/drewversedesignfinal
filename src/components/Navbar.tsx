@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -85,8 +84,8 @@ const Navbar = () => {
   return <nav className={cn(
     "fixed top-0 w-full z-50 transition-all duration-300",
     scrolled 
-      ? "bg-black border-b border-white/10 py-3" 
-      : "bg-black py-5"
+      ? "bg-black/70 backdrop-blur-md border-b border-white/10 py-3" 
+      : "bg-transparent backdrop-blur-sm py-5"
   )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
