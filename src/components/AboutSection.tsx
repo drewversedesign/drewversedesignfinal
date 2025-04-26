@@ -1,7 +1,16 @@
 import { useEffect, useRef } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -18,24 +27,36 @@ const AboutSection = () => {
       revealElements.forEach(el => observer.unobserve(el));
     };
   }, []);
-  const stats = [{
-    icon: Globe,
-    value: "20+",
-    label: "Projects Completed"
-  }, {
-    icon: Users,
-    value: "50+",
-    label: "Happy Clients"
-  }, {
-    icon: Briefcase,
-    value: "6+",
-    label: "Services Offered"
-  }, {
-    icon: Award,
-    value: "1+",
-    label: "Years Experience"
-  }];
-  return <section id="about" className="py-24 bg-gradient-to-b from-black to-metal-900" ref={sectionRef}>
+
+  const stats = [
+    {
+      icon: Globe,
+      value: "20+",
+      label: "Projects Completed"
+    },
+    {
+      icon: Users,
+      value: "50+",
+      label: "Happy Clients"
+    },
+    {
+      icon: Briefcase,
+      value: "6+",
+      label: "Services Offered"
+    },
+    {
+      icon: Award,
+      value: "1+",
+      label: "Years Experience"
+    }
+  ];
+
+  return (
+    <section
+      id="about"
+      className="py-24 bg-gradient-to-b from-black to-metal-900"
+      ref={sectionRef}
+    >
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div className="order-2 md:order-1">
@@ -95,18 +116,43 @@ const AboutSection = () => {
           </div>
         </div>
         
-        <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
-          {stats.map((stat, index) => <div key={stat.label} className="glass-card p-6 reveal fade-bottom" style={{
-          animationDelay: `${index * 100}ms`
-        }}>
-              <div className="bg-white/10 rounded-full p-3 inline-block mb-4">
-                <stat.icon className="h-6 w-6 text-white" />
-              </div>
-              <div className="text-white font-display text-4xl font-bold">{stat.value}</div>
-              <div className="text-white/60 font-mono text-xs uppercase tracking-wide mt-1">{stat.label}</div>
-            </div>)}
+        <div className="mt-24 relative px-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-xl mx-auto reveal fade-bottom"
+          >
+            <CarouselContent>
+              {stats.map((stat, index) => (
+                <CarouselItem key={stat.label} className="md:basis-1/2 lg:basis-1/3">
+                  <div
+                    className="glass-card p-6 h-full"
+                    style={{
+                      animationDelay: `${index * 100}ms`,
+                    }}
+                  >
+                    <div className="bg-white/10 rounded-full p-3 inline-block mb-4">
+                      <stat.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="text-white font-display text-4xl font-bold">
+                      {stat.value}
+                    </div>
+                    <div className="text-white/60 font-mono text-xs uppercase tracking-wide mt-1">
+                      {stat.label}
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute -left-4 bg-white/10 hover:bg-white/20 border-white/20" />
+            <CarouselNext className="absolute -right-4 bg-white/10 hover:bg-white/20 border-white/20" />
+          </Carousel>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AboutSection;
