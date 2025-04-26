@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -6,9 +7,13 @@ import ServicesSection from "@/components/ServicesSection";
 import ShowcaseSection from "@/components/ShowcaseSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { updateMetaTags } from "@/utils/meta-tags";
 
 const Index = () => {
   useEffect(() => {
+    // Update meta tags for home page
+    updateMetaTags('home');
+    
     // Set viewport meta tag to ensure proper mobile scaling
     const metaViewport = document.querySelector('meta[name="viewport"]');
     if (metaViewport) {

@@ -1,11 +1,18 @@
+
 import { BookOpen } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blog-posts";
+import { useEffect } from "react";
+import { updateMetaTags } from "@/utils/meta-tags";
 
 const Blog = () => {
+  useEffect(() => {
+    updateMetaTags('blog');
+  }, []);
+
   return (
     <div className="min-h-screen bg-black">
       <Navbar />
