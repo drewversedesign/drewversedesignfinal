@@ -1,15 +1,18 @@
+
 import { useState, useEffect, useCallback } from "react";
-import { Menu } from "lucide-react";
+import { X, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
 import { useMobileNav } from "@/hooks/use-mobile-nav";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const { isOpen, setIsOpen } = useMobileNav();
+  const { isOpen, toggle, close } = useMobileNav();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,25 +23,30 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile nav when route changes
+  useEffect(() => {
+    close();
+  }, [location.pathname, close]);
+
   const handleNavClick = useCallback((href: string, isHash: boolean) => {
-    setIsOpen(false);
+    close();
     
     if (isHash) {
-      requestAnimationFrame(() => {
-        const element = document.querySelector(href);
+      // Use a brief timeout to ensure the menu is closed before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(href.substring(1));
         if (element) {
           const navHeight = 80; // Approximate navbar height
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+          const offsetPosition = element.offsetTop - navHeight;
 
           window.scrollTo({
             top: offsetPosition,
             behavior: "smooth"
           });
         }
-      });
+      }, 100);
     }
-  }, [setIsOpen]);
+  }, [close]);
 
   const navLinks = [
     {
@@ -76,7 +84,7 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 w-full z-40 transition-all duration-300",
+        "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled 
           ? "bg-black/70 backdrop-blur-md border-b border-white/10 py-3" 
           : "bg-transparent backdrop-blur-sm py-5"
@@ -88,7 +96,7 @@ const Navbar = () => {
             <Link 
               to="/" 
               className="text-white font-display text-xl uppercase tracking-wider"
-              onClick={() => setIsOpen(false)}
+              onClick={close}
             >
               DREWVERSE
               <span className="text-xs font-mono tracking-widest block text-orange-400">DESIGN</span>
@@ -124,7 +132,7 @@ const Navbar = () => {
           </div>
 
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={toggle}
             className="md:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
@@ -135,53 +143,79 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu - Completely revamped */}
       <div
         id="mobile-menu"
-        className={cn(
-          "fixed inset-0 bg-black/95 backdrop-blur-sm z-50 transition-all duration-300 md:hidden",
-          isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        )}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
+        className={cn(
+          "fixed inset-0 bg-black/95 z-60 transition-opacity duration-300 md:hidden",
+          isOpen 
+            ? "opacity-100 pointer-events-auto" 
+            : "opacity-0 pointer-events-none"
+        )}
+        style={{ height: "100dvh", top: 0 }}
       >
-        <div className="flex flex-col h-full">
-          <div className="flex flex-col space-y-6 items-center pt-24 px-6">
-            {navLinks.map(link => 
-              link.isHash ? (
-                <a 
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link.href, link.isHash);
-                  }}
-                  className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2"
-                >
-                  {link.name.toUpperCase()}
-                </a>
-              ) : (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2"
-                >
-                  {link.name.toUpperCase()}
-                </Link>
-              )
-            )}
+        <div className="relative h-full flex flex-col">
+          <div className="flex justify-between items-center py-5 px-6 border-b border-white/10">
+            <Link 
+              to="/" 
+              className="text-white font-display text-xl uppercase tracking-wider"
+              onClick={close}
+            >
+              DREWVERSE
+              <span className="text-xs font-mono tracking-widest block text-orange-400">DESIGN</span>
+            </Link>
+            
+            <button
+              onClick={close}
+              className="text-white p-2 hover:bg-white/10 rounded-md transition-colors"
+              aria-label="Close menu"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+          
+          <div className="flex flex-col flex-1 overflow-y-auto py-8 px-6">
+            <nav className="flex flex-col space-y-6 items-center">
+              {navLinks.map(link => 
+                link.isHash ? (
+                  <a 
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(link.href, link.isHash);
+                    }}
+                    className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2"
+                  >
+                    {link.name.toUpperCase()}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={close}
+                    className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2"
+                  >
+                    {link.name.toUpperCase()}
+                  </Link>
+                )
+              )}
+            </nav>
+          </div>
+          
+          <div className="p-6 border-t border-white/10 flex justify-center">
             <Link
               to={isHomePage ? "#contact" : "/#contact"}
               onClick={() => {
-                setIsOpen(false);
+                close();
                 if (isHomePage) {
                   handleNavClick("#contact", true);
                 }
               }}
-              className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center"
+              className="bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-full text-center"
             >
               START PROJECT
             </Link>
