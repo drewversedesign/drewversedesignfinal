@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -6,7 +5,7 @@ import Footer from "@/components/Footer";
 import { BlogPostHeader } from "@/components/blog/BlogPostHeader";
 import { BlogPostCTA } from "@/components/blog/BlogPostCTA";
 import { BlogPostNotFound } from "@/components/blog/BlogPostNotFound";
-import { blogPosts } from "@/data/blogPosts";
+import { blogPosts, BlogPost } from "@/data/blog-posts";
 
 interface BlogPostParams {
   id: string;
@@ -14,7 +13,7 @@ interface BlogPostParams {
 
 const BlogPost = () => {
   const { id } = useParams<keyof BlogPostParams>() as BlogPostParams;
-  const [post, setPost] = useState<any>(null);
+  const [post, setPost] = useState<BlogPost | null>(null);
   
   useEffect(() => {
     const foundPost = blogPosts.find(post => post.id === id);

@@ -1,10 +1,9 @@
-
 import { BookOpen } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { blogPosts } from "@/data/blogPosts";
+import { blogPosts } from "@/data/blog-posts";
 
 const Blog = () => {
   return (
