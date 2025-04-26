@@ -1,11 +1,10 @@
-
 export const futureWebDesignPost = {
   id: "future-web-design-services",
   title: "The Future of Web Design Services: How DrewVerse Design Paves the Way",
-  description: "Explore how DrewVerse Design is shaping the future of web development with AI integration, mobile-first design, and emerging SEO practices.",
-  metaTitle: "Why Choose DrewVerse Design for US, UK, UAE, and Uganda Web Design Services",
-  metaDescription: "Discover why businesses in the USA, UK, UAE, and Uganda trust DrewVerse Design for professional, affordable web design, SEO, hosting, and app development solutions. Boost your online success today.",
-  metaKeywords: "web design services USA, web design services UK, web design UAE, web design Uganda, affordable website design, small business web design, website hosting and SEO, DrewVerse Design, mobile app development Uganda, professional website solutions, web development company Uganda",
+  description: "Explore how DrewVerse Design leads the way in modern web design services, offering mobile-first, SEO-optimized, and affordable websites for businesses across the USA, UK, UAE, and Uganda.",
+  metaTitle: "The Future of Web Design: How DrewVerse Design Paves the Way for Success",
+  metaDescription: "Explore how DrewVerse Design leads the way in modern web design services, offering mobile-first, SEO-optimized, and affordable websites for businesses across the USA, UK, UAE, and Uganda.",
+  metaKeywords: "future of web design, modern web design services, mobile-first web design, affordable website design, DrewVerse Design, custom web design services, web design USA, web design UK, web design UAE, web design Uganda, website SEO optimization, small business web design, scalable website solutions, web development company Uganda",
   date: "April 26, 2025",
   readTime: "8 min read",
   image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&auto=format&fit=crop&q=60",
