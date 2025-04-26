@@ -6,7 +6,8 @@ import Footer from "@/components/Footer";
 import { BlogPostHeader } from "@/components/blog/BlogPostHeader";
 import { BlogPostCTA } from "@/components/blog/BlogPostCTA";
 import { BlogPostNotFound } from "@/components/blog/BlogPostNotFound";
-import type { BlogPost } from "@/data/blog-posts"; // Changed to type-only import
+import type { BlogPost } from "@/data/blog-posts"; // Type-only import for BlogPost interface
+import { blogPosts } from "@/data/blog-posts"; // Adding import for blogPosts array
 
 interface BlogPostParams {
   id: string;
@@ -54,4 +55,3 @@ const BlogPost = () => {
 };
 
 export default BlogPost;
-
