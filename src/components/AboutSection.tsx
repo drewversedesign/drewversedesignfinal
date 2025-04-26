@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -39,8 +40,8 @@ const AboutSection = () => {
     value: "1+",
     label: "Years Experience"
   }];
-  return <section id="about" className="py-12 md:py-16 bg-gradient-to-b from-black to-metal-900" ref={sectionRef}>
-      <div className="section-container px-4 md:px-6">
+  return <section id="about" className="py-8 md:py-12 bg-gradient-to-b from-black to-metal-900" ref={sectionRef}>
+      <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
           <div className="order-2 md:order-1">
             <div className="relative mx-auto md:mx-0" style={{
@@ -101,7 +102,7 @@ const AboutSection = () => {
           </div>
         </div>
         
-        <div className="mt-16 md:mt-24 relative px-0 md:px-12">
+        <div className="mt-8 md:mt-12 relative px-0 md:px-12">
           <Carousel opts={{
           align: "start",
           loop: true
@@ -126,8 +127,6 @@ const AboutSection = () => {
             <CarouselPrevious className="absolute -left-4 bg-white/10 hover:bg-white/20 border-white/20 hidden md:flex" />
             <CarouselNext className="absolute -right-4 bg-white/10 hover:bg-white/20 border-white/20 hidden md:flex" />
           </Carousel>
-
-          
         </div>
       </div>
     </section>;

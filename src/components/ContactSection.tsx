@@ -25,7 +25,7 @@ const ContactSection = () => {
     
     // Simulate form submission
     setTimeout(() => {
-      toast.success("Message sent successfully! Sebastian will be in touch soon.");
+      toast.success("Message sent successfully! We'll be in touch soon.");
       setFormData({
         name: "",
         email: "",
@@ -59,9 +59,9 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-black">
+    <section id="contact" className="py-16 bg-black">
       <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
             <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
               <span className="text-white/80 font-mono text-xs uppercase tracking-wider">
@@ -69,17 +69,17 @@ const ContactSection = () => {
               </span>
             </div>
 
-            <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-8">
+            <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
               LET'S BUILD SOMETHING EXTRAORDINARY
             </h2>
 
-            <p className="text-white/70 font-mono text-sm leading-relaxed mb-12">
-              Whether you're looking for expert consultation or custom parts for your 
-              motorcycle, Sebastian is ready to help bring your vision to life. Fill out 
+            <p className="text-white/70 font-mono text-sm leading-relaxed mb-8">
+              Whether you're looking for a new website, mobile app, or complete digital 
+              branding solution, we're ready to help bring your vision to life. Fill out 
               the form to start the conversation.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {contactInfo.map((item, index) => (
                 <a 
                   key={index} 
@@ -170,11 +170,11 @@ const ContactSection = () => {
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all appearance-none"
                   >
                     <option value="" disabled className="bg-metal-800">Select a service</option>
-                    <option value="Custom Part Design" className="bg-metal-800">Custom Part Design</option>
-                    <option value="Performance Optimization" className="bg-metal-800">Performance Optimization</option>
-                    <option value="Technical Consultation" className="bg-metal-800">Technical Consultation</option>
-                    <option value="Workshop Collaboration" className="bg-metal-800">Workshop Collaboration</option>
-                    <option value="Other" className="bg-metal-800">Other</option>
+                    <option value="Web Development" className="bg-metal-800">Web Development</option>
+                    <option value="Mobile App Development" className="bg-metal-800">Mobile App Development</option>
+                    <option value="UI/UX Design" className="bg-metal-800">UI/UX Design</option>
+                    <option value="Brand Identity" className="bg-metal-800">Brand Identity</option>
+                    <option value="SEO Services" className="bg-metal-800">SEO Services</option>
                   </select>
                 </div>
               </div>

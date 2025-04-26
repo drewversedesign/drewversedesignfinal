@@ -63,9 +63,9 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-metal-900">
+    <section id="services" className="py-12 md:py-16 bg-metal-900">
       <div className="section-container">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
             <span className="text-white/80 font-mono text-xs uppercase tracking-wider">
               Our Services
@@ -82,7 +82,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           {services.map((service, index) => (
             <div
               key={service.title}
@@ -109,8 +109,8 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="mt-20 glass p-10 rounded-2xl reveal fade-bottom" style={{ animationDelay: "400ms" }}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="mt-12 glass p-8 rounded-2xl reveal fade-bottom" style={{ animationDelay: "400ms" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-display font-bold text-white mb-4">
                 OUR DESIGN PROCESS
@@ -121,7 +121,7 @@ const ServicesSection = () => {
               </p>
               <a
                 href="#contact"
-                className="mt-6 px-8 py-3 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-orange-600 transition-all inline-flex items-center"
+                className="mt-4 px-8 py-3 bg-orange-500 text-white font-mono text-sm uppercase tracking-wider rounded-md hover:bg-orange-600 transition-all inline-flex items-center"
               >
                 Start Project
                 <ArrowRight className="ml-2 h-4 w-4" />
