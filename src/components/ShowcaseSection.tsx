@@ -66,7 +66,7 @@ const ShowcaseSection = () => {
           </div>
 
           <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{ animationDelay: "100ms" }}>
-            FEATURED PROJECTS
+            PORTFOLIO
           </h2>
 
           <p className="mt-6 text-white/70 font-mono text-sm leading-relaxed reveal fade-bottom" style={{ animationDelay: "200ms" }}>
@@ -94,3 +94,4 @@ const ShowcaseSection = () => {
 };
 
 export default ShowcaseSection;
+
