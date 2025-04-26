@@ -34,7 +34,7 @@ const BlogPost = () => {
           <div className="text-center">
             <h1 className="text-2xl font-display text-white mb-4">Blog post not found</h1>
             <Link to="/blog">
-              <Button variant="outline">
+              <Button variant="outline" className="text-white">
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to all posts
               </Button>
             </Link>
@@ -52,7 +52,7 @@ const BlogPost = () => {
       <div className="pt-24 pb-20">
         <div className="max-w-4xl mx-auto px-4">
           <div className="mb-8">
-            <Link to="/blog" className="inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors mb-6">
+            <Link to="/blog" className="inline-flex items-center text-white hover:text-white/80 transition-colors mb-6">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to all posts
             </Link>
             
@@ -64,13 +64,13 @@ const BlogPost = () => {
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-white mb-4">{post.title}</h1>
             
-            <div className="flex flex-wrap items-center gap-4 text-white/70 mb-6">
+            <div className="flex flex-wrap items-center gap-4 text-white mb-6">
               <div className="flex items-center">
-                <Calendar className="h-4 w-4 mr-2" />
+                <Calendar className="h-4 w-4 mr-2 text-white" />
                 <span>{post.date}</span>
               </div>
               <div className="flex items-center">
-                <Clock className="h-4 w-4 mr-2" />
+                <Clock className="h-4 w-4 mr-2 text-white" />
                 <span>{post.readTime}</span>
               </div>
             </div>
@@ -79,7 +79,7 @@ const BlogPost = () => {
           </div>
           
           <div 
-            className="prose prose-invert prose-lg max-w-none"
+            className="prose prose-invert prose-lg max-w-none prose-a:text-white prose-a:underline prose-a:hover:text-white/80"
             dangerouslySetInnerHTML={{ __html: post.content }}
           ></div>
           
@@ -90,7 +90,7 @@ const BlogPost = () => {
                 <p className="text-white/70">Let DrewVerse Design elevate your brand with professional web solutions</p>
               </div>
               <Link to="/#contact">
-                <Button className="bg-orange-500 hover:bg-orange-600">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white">
                   Contact Us
                 </Button>
               </Link>
