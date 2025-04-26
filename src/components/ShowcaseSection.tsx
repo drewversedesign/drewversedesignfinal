@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { CardHoverEffect } from "./ui/card-hover-effect";
 import { ArrowRight } from "lucide-react";
@@ -68,6 +67,18 @@ const ShowcaseSection = () => {
     link: "#"
   }];
 
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const element = e.target as HTMLElement;
+    const projectCard = element.closest('[data-project-index]');
+    
+    if (projectCard instanceof HTMLElement) {
+      const index = projectCard.dataset.projectIndex;
+      if (index !== undefined) {
+        setSelectedProject(showcaseItems[parseInt(index)]);
+      }
+    }
+  };
+
   return (
     <section id="showcase" className="bg-gradient-to-b from-metal-900 to-black py-0 md:py-0">
       <div className="section-container">
@@ -95,12 +106,7 @@ const ShowcaseSection = () => {
         <div 
           className="reveal fade-bottom" 
           style={{ animationDelay: "300ms" }}
-          onClick={(e) => {
-            const index = e.target.closest('[data-project-index]')?.dataset?.projectIndex;
-            if (index !== undefined) {
-              setSelectedProject(showcaseItems[parseInt(index)]);
-            }
-          }}
+          onClick={handleCardClick}
         >
           <CardHoverEffect items={showcaseItems.map((item, index) => ({
             ...item,
