@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -5,7 +6,7 @@ import Footer from "@/components/Footer";
 import { BlogPostHeader } from "@/components/blog/BlogPostHeader";
 import { BlogPostCTA } from "@/components/blog/BlogPostCTA";
 import { BlogPostNotFound } from "@/components/blog/BlogPostNotFound";
-import { blogPosts, BlogPost } from "@/data/blog-posts";
+import type { BlogPost } from "@/data/blog-posts"; // Changed to type-only import
 
 interface BlogPostParams {
   id: string;
@@ -53,3 +54,4 @@ const BlogPost = () => {
 };
 
 export default BlogPost;
+
