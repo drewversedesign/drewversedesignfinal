@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { Wrench, Settings, Award, Users } from "lucide-react";
+import { Briefcase, Users, Award, Globe } from "lucide-react";
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -26,10 +26,10 @@ const AboutSection = () => {
   }, []);
 
   const stats = [
-    { icon: Wrench, value: "15+", label: "Years Experience" },
-    { icon: Settings, value: "200+", label: "Custom Parts" },
-    { icon: Users, value: "500+", label: "Satisfied Clients" },
-    { icon: Award, value: "12", label: "Industry Awards" },
+    { icon: Globe, value: "20+", label: "Projects Completed" },
+    { icon: Users, value: "50+", label: "Happy Clients" },
+    { icon: Briefcase, value: "6+", label: "Services Offered" },
+    { icon: Award, value: "1+", label: "Years Experience" },
   ];
 
   return (
@@ -40,23 +40,23 @@ const AboutSection = () => {
             <div className="relative">
               <div className="aspect-ratio-4/3 overflow-hidden rounded-lg reveal fade-right">
                 <img
-                  src="https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="Sebastian in his workshop"
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+                  alt="Creative workspace with digital design tools"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-8 -right-8 w-64 h-64 rounded-lg overflow-hidden reveal fade-left" style={{ animationDelay: "200ms" }}>
                 <img
-                  src="https://images.unsplash.com/photo-1547549082-6bc09f2049ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                  alt="Close-up of custom motorcycle part"
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                  alt="Web development process"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -top-8 -left-8 glass p-6 rounded-lg reveal fade-bottom" style={{ animationDelay: "400ms" }}>
                 <div className="flex flex-col">
-                  <div className="text-white/80 font-mono text-sm uppercase tracking-wider">Experience</div>
-                  <div className="text-white font-display text-4xl font-bold">15+</div>
-                  <div className="text-white/60 font-mono text-xs">Years in custom motorcycles</div>
+                  <div className="text-white/80 font-mono text-sm uppercase tracking-wider">Since</div>
+                  <div className="text-white font-display text-4xl font-bold">2023</div>
+                  <div className="text-white/60 font-mono text-xs">Established in Kampala</div>
                 </div>
               </div>
             </div>
@@ -65,19 +65,19 @@ const AboutSection = () => {
           <div className="order-1 md:order-2">
             <div className="space-y-6">
               <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
-                <span className="text-white/80 font-mono text-xs uppercase tracking-wider">About Sebastian</span>
+                <span className="text-white/80 font-mono text-xs uppercase tracking-wider">About DrewVerse</span>
               </div>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{ animationDelay: "100ms" }}>
-                CRAFTING MOTORCYCLE <span className="text-balance">EXCELLENCE SINCE 2008</span>
+                EMPOWERING DIGITAL <span className="text-balance">GROWTH</span>
               </h2>
               
               <p className="text-white/70 font-mono text-sm leading-relaxed max-w-xl reveal fade-bottom" style={{ animationDelay: "200ms" }}>
-                With over 15 years of experience in custom motorcycle design and fabrication, Sebastian has established himself as a premier consultant in the industry. What began as a passion project in a small garage has evolved into a renowned consultancy trusted by riders and builders worldwide.
+                DrewVerse Design is a creative digital agency based in Kampala, Uganda. Since 2023, we've been dedicated to delivering high-quality, affordable digital solutions for startups and small businesses looking to enhance their online presence.
               </p>
               
               <p className="text-white/70 font-mono text-sm leading-relaxed max-w-xl reveal fade-bottom" style={{ animationDelay: "300ms" }}>
-                Sebastian's approach combines mechanical precision with artistic vision, creating parts that not only perform exceptionally but also enhance the aesthetic appeal of each motorcycle. Every consultation and custom piece reflects his commitment to excellence and innovation.
+                Our approach combines modern design principles with cutting-edge technology to create responsive, user-friendly digital experiences that drive growth and engagement for our clients.
               </p>
               
               <div className="pt-6 reveal fade-bottom" style={{ animationDelay: "400ms" }}>

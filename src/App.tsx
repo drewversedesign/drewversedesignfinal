@@ -12,8 +12,7 @@ const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
-    // Update the document title
-    document.title = "Sebastian Custom Motorcycles";
+    document.title = "DrewVerse Design | Creative Digital Agency";
   }, []);
 
   return (
@@ -24,7 +23,6 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

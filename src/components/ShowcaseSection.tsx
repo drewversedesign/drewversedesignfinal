@@ -26,46 +26,32 @@ const ShowcaseSection = () => {
 
   const showcaseItems = [
     {
-      title: "Custom Exhaust Systems",
+      title: "InkMaster Tattoo Studio",
       description:
-        "Precision-engineered exhaust systems that enhance performance while delivering a distinctive sound profile.",
+        "A dynamic website featuring an interactive portfolio and seamless booking functionality.",
       image:
-        "https://images.unsplash.com/photo-1558980664-3a031cf67ea8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     },
     {
-      title: "Bespoke Handlebars",
+      title: "Alex Johnson Design Portfolio",
       description:
-        "Ergonomically designed handlebars tailored to your riding style and aesthetic preferences.",
+        "An interactive personal portfolio showcasing creative work with advanced animations.",
       image:
-        "https://images.unsplash.com/photo-1574280363402-2f672940b871?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     },
     {
-      title: "Performance Fuel Systems",
+      title: "ModernSpace Furniture Store",
       description:
-        "Advanced fuel delivery systems for optimized power, efficiency, and throttle response.",
+        "A minimalist e-commerce platform with unique product visualization features.",
       image:
-        "https://images.unsplash.com/photo-1508816216118-2a24dd5d464f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     },
     {
-      title: "Custom Seating",
+      title: "Global Hope Foundation",
       description:
-        "Luxurious, ergonomic seating solutions that balance comfort with striking visual appeal.",
+        "A non-profit website featuring donation campaigns and community programs.",
       image:
-        "https://images.unsplash.com/photo-1579544757872-ce8f6af30e0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1972&q=80",
-    },
-    {
-      title: "Suspension Upgrades",
-      description:
-        "Tailored suspension systems for superior handling, stability, and ride comfort.",
-      image:
-        "https://images.unsplash.com/photo-1615172282427-9a57ef2d142e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-    },
-    {
-      title: "Precision CNC Components",
-      description:
-        "High-tolerance machined parts for exceptional durability and performance.",
-      image:
-        "https://images.unsplash.com/photo-1636789198815-98ac35f83145?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     },
   ];
 
@@ -75,17 +61,17 @@ const ShowcaseSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
             <span className="text-white/80 font-mono text-xs uppercase tracking-wider">
-              Showcase
+              Our Work
             </span>
           </div>
 
           <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white reveal fade-bottom" style={{ animationDelay: "100ms" }}>
-            CUSTOM PART EXCELLENCE
+            FEATURED PROJECTS
           </h2>
 
           <p className="mt-6 text-white/70 font-mono text-sm leading-relaxed reveal fade-bottom" style={{ animationDelay: "200ms" }}>
-            Browse a selection of Sebastian's custom motorcycle parts, each meticulously 
-            crafted to deliver exceptional performance and distinctive style.
+            Explore our portfolio of successful digital solutions that have helped businesses 
+            achieve their goals and enhance their online presence.
           </p>
         </div>
 
@@ -98,7 +84,7 @@ const ShowcaseSection = () => {
             href="#contact"
             className="inline-flex items-center px-8 py-3 bg-white text-black font-mono text-sm uppercase tracking-wider rounded-md hover:bg-white/90 transition-all group"
           >
-            Request Custom Part
+            Start Your Project
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
