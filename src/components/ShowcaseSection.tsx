@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { CardHoverEffect } from "./ui/card-hover-effect";
 import { ArrowRight } from "lucide-react";
@@ -36,6 +37,14 @@ const ShowcaseSection = () => {
     title: "Foundation Website",
     description: "A non-profit website featuring donation campaigns and community programs.",
     image: "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(8).png?raw=true"
+  }, {
+    title: "Tech Blog Platform",
+    description: "A modern blog platform featuring dynamic content and responsive design.",
+    image: "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345986_y.jpg?raw=true"
+  }, {
+    title: "Corporate Website",
+    description: "A professional corporate website with sleek design and intuitive navigation.",
+    image: "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345987_y.jpg?raw=true"
   }];
 
   return <section id="showcase" className="bg-gradient-to-b from-metal-900 to-black py-0 md:py-0">
