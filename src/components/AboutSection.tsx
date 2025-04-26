@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -44,10 +45,10 @@ const AboutSection = () => {
               <div className="aspect-ratio-4/3 overflow-hidden rounded-lg reveal fade-right">
                 <img alt="Creative workspace with digital design tools" className="w-full h-full object-cover" src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true" />
               </div>
-              <div className="absolute -bottom-8 -right-8 w-64 h-64 rounded-lg overflow-hidden reveal fade-left" style={{
+              <div className="absolute -bottom-8 -right-8 w-48 h-48 rounded-lg overflow-hidden reveal fade-left" style={{
               animationDelay: "200ms"
             }}>
-                <img alt="Web development process" src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345766_x-removebg-preview.png?raw=true" className="w-full h-full object-scale-down" />
+                <img alt="Web development process" src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345766_x-removebg-preview.png?raw=true" className="w-full h-full object-scale-down transform translate-y-8" />
               </div>
               <div className="absolute -top-8 -left-8 glass p-6 rounded-lg reveal fade-bottom" style={{
               animationDelay: "400ms"
