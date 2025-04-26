@@ -64,7 +64,7 @@ const AboutSection = () => {
     label: "Services Offered"
   }, {
     icon: Award,
-    value: "1+",
+    value: "3+",
     label: "Years Experience"
   }];
 
