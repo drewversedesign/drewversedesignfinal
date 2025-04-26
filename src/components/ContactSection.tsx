@@ -13,10 +13,7 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -27,9 +24,18 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Format the WhatsApp message
+    const whatsappMessage = `*New Project Inquiry*\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\n\nMessage: ${formData.message}`;
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/256772653789?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Show success toast and redirect
+    toast.success("Redirecting you to WhatsApp...");
+    
+    // Short delay before redirect to show the toast
     setTimeout(() => {
-      toast.success("Message sent successfully! We'll be in touch soon.");
+      window.open(whatsappUrl, '_blank');
       setFormData({
         name: "",
         email: "",
@@ -38,7 +44,7 @@ const ContactSection = () => {
         message: ""
       });
       setIsSubmitting(false);
-    }, 1500);
+    }, 1000);
   };
 
   const contactInfo = [{
