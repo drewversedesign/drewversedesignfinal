@@ -7,45 +7,45 @@ import Footer from "@/components/Footer";
 const Blog = () => {
   const posts = [
     {
-      title: "The Future of Web Development",
-      description: "Exploring emerging trends and technologies shaping the web development landscape",
-      date: "April 20, 2025",
-      readTime: "5 min read",
+      title: "Web Design Services in Uganda: A Complete Guide 2025",
+      description: "Discover how DrewVerse Design is revolutionizing web design services in Uganda with modern, responsive, and affordable solutions for businesses.",
+      date: "April 26, 2025",
+      readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop&q=60"
     },
     {
-      title: "Designing for Accessibility",
-      description: "Best practices for creating inclusive digital experiences",
-      date: "April 18, 2025",
-      readTime: "4 min read",
+      title: "How to Choose the Right Web Design Agency for Your Business",
+      description: "Learn the key factors to consider when selecting a web design agency in East Africa, and why DrewVerse Design stands out in the market.",
+      date: "April 24, 2025",
+      readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=60"
     },
     {
-      title: "The Rise of AI in Design",
-      description: "How artificial intelligence is transforming the design industry",
-      date: "April 15, 2025",
-      readTime: "6 min read",
+      title: "The Impact of SEO-Friendly Web Design on Business Growth",
+      description: "Explore how DrewVerse Design integrates SEO best practices into web design to help Ugandan businesses reach wider audiences.",
+      date: "April 22, 2025",
+      readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=800&auto=format&fit=crop&q=60"
     },
     {
-      title: "Mobile-First Development",
-      description: "Why prioritizing mobile experiences is crucial in modern web development",
-      date: "April 13, 2025",
-      readTime: "4 min read",
+      title: "Expert Web Design Services for Small Businesses",
+      description: "Discover our affordable and professional web design solutions tailored specifically for small businesses in Uganda and East Africa.",
+      date: "April 20, 2025",
+      readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop&q=60"
     },
     {
-      title: "UI/UX Design Trends 2025",
-      description: "Latest trends and innovations in user interface and experience design",
-      date: "April 10, 2025",
-      readTime: "7 min read",
+      title: "Web Development Trends in Uganda: 2025 Edition",
+      description: "Stay ahead with the latest web development trends and technologies that DrewVerse Design is implementing for Ugandan businesses.",
+      date: "April 18, 2025",
+      readTime: "8 min read",
       image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop&q=60"
     },
     {
-      title: "The Power of Design Systems",
-      description: "Building scalable and consistent user interfaces with design systems",
-      date: "April 8, 2025",
-      readTime: "5 min read",
+      title: "Creating Professional E-commerce Websites in Uganda",
+      description: "Learn how DrewVerse Design helps businesses in Uganda establish their online presence with custom e-commerce solutions.",
+      date: "April 16, 2025",
+      readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60"
     }
   ];
@@ -57,9 +57,9 @@ const Blog = () => {
       <div className="pt-24">
         <div className="section-container">
           <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-display text-white mb-4">Our Blog</h1>
+            <h1 className="text-4xl md:text-5xl font-display text-white mb-4">DrewVerse Design Blog</h1>
             <p className="text-white/70 max-w-2xl mx-auto">
-              Insights, updates, and stories from the DrewVerse team
+              Expert insights on web design, development, and digital solutions in Uganda and East Africa
             </p>
           </div>
 
