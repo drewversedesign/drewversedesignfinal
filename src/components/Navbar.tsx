@@ -132,7 +132,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={cn("fixed inset-0 bg-black flex flex-col z-40 transition-transform duration-300 ease-in-out", isOpen ? "translate-x-0" : "translate-x-full")}>
+      <div className={cn(
+        "fixed inset-0 bg-black/60 backdrop-blur-md flex flex-col z-40 transition-transform duration-300 ease-in-out",
+        isOpen ? "translate-x-0" : "translate-x-full"
+      )}>
         <div className="relative w-full">
           <button onClick={() => setIsOpen(false)} className="absolute top-6 right-6 text-white focus:outline-none z-50" aria-label="Close menu">
             <X className="h-8 w-8" />
@@ -145,7 +148,7 @@ const Navbar = () => {
                 key={link.name} 
                 href={link.href}
                 onClick={() => handleNavClick(link.href, link.isHash)} 
-                className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center"
+                className="text-2xl font-display text-white/90 hover:text-white transition-colors py-2 w-full text-center"
               >
                 {link.name.toUpperCase()}
               </a>
@@ -154,13 +157,17 @@ const Navbar = () => {
                 key={link.name}
                 to={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2 w-full text-center"
+                className="text-2xl font-display text-white/90 hover:text-white transition-colors py-2 w-full text-center"
               >
                 {link.name.toUpperCase()}
               </Link>
             )
           )}
-          <Link to={isHomePage ? "#contact" : "/#contact"} className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center" onClick={() => setIsOpen(false)}>
+          <Link 
+            to={isHomePage ? "#contact" : "/#contact"} 
+            className="mt-6 bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-64 text-center" 
+            onClick={() => setIsOpen(false)}
+          >
             CONSULT
           </Link>
         </div>
