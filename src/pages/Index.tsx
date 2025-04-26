@@ -10,6 +10,12 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
+    // Set viewport meta tag to ensure proper mobile scaling
+    const metaViewport = document.querySelector('meta[name="viewport"]');
+    if (metaViewport) {
+      metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+    }
+    
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
@@ -32,13 +38,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen overflow-x-hidden">
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <ShowcaseSection />
-      <ContactSection />
+      <main className="w-full">
+        <HeroSection />
+        <AboutSection />
+        <ServicesSection />
+        <ShowcaseSection />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   );
