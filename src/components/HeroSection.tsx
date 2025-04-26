@@ -35,7 +35,7 @@ const HeroSection = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source 
-            src="https://cdn.dribbble.com/userupload/8132900/file/original-ce7edc7add78c536e3eec214b04ca26c.mp4" 
+            src="https://cdn.dribbble.com/userupload/large-thumbnail20250314-3311091-biajzu.mp4" 
             type="video/mp4" 
           />
           Your browser does not support the video tag.
