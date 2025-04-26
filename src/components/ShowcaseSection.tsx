@@ -35,7 +35,7 @@ const ShowcaseSection = () => {
     description: "A non-profit website featuring donation campaigns and community programs.",
     image: "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(8).png?raw=true"
   }];
-  return <section id="showcase" className="md:py-12 bg-gradient-to-b from-metal-900 to-black py-0">
+  return <section id="showcase" className="bg-gradient-to-b from-metal-900 to-black py-0 md:py-0">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
