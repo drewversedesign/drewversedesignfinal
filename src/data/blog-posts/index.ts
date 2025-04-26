@@ -7,8 +7,10 @@ import { seoFriendlyPost } from './seo-friendly';
 import { expertWebDesignPost } from './expert-web-design';
 import { webDevTrendsPost } from './web-dev-trends';
 import { ecommerceWebsitesPost } from './ecommerce-websites';
+import { futureWebDesignPost } from './future-web-design';
 
 export const blogPosts = [
+  futureWebDesignPost, // Add new post at the start to feature it
   whyChoosePost,
   responsiveDesignPost,
   webDesignUgandaPost,
