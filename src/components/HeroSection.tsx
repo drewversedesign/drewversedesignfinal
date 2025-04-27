@@ -1,7 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current) return;
@@ -11,19 +14,36 @@ const HeroSection = () => {
       heroRef.current.style.opacity = Math.max(opacity, 0).toString();
       heroRef.current.style.transform = `translateY(${translateY}px)`;
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
+
+  const handleVideoLoaded = () => {
+    setIsVideoLoaded(true);
+  };
+
+  return (
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+      <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black z-10"></div>
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover" preload="auto" poster="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover"
+          onLoadedData={handleVideoLoaded}
+          preload="auto"
+          poster="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true"
+          loading="eager"
+        >
           <source src="https://github.com/drewversedesign/images-for-drewverse-website/raw/refs/heads/main/DREWVERSE%20DESIGN%20UGANDA%20(2).mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
       
-      <div ref={heroRef} className="section-container relative z-10 text-center">
+      <div ref={heroRef} className={`section-container relative z-10 text-center transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-5xl font-display font-bold text-white uppercase tracking-wider leading-tight animate-fade-in lg:text-3xl">
             CREATIVE <br />
@@ -50,6 +70,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
