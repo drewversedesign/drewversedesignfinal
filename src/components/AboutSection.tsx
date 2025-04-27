@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Briefcase, Users, Award, Globe } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";

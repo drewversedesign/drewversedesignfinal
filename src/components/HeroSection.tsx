@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
@@ -36,7 +37,6 @@ const HeroSection = () => {
           onLoadedData={handleVideoLoaded}
           preload="auto"
           poster="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true"
-          loading="eager"
         >
           <source src="https://github.com/drewversedesign/images-for-drewverse-website/raw/refs/heads/main/DREWVERSE%20DESIGN%20UGANDA%20(2).mp4" type="video/mp4" />
           Your browser does not support the video tag.
