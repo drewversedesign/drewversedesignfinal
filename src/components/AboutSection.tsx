@@ -4,7 +4,6 @@ import { Briefcase, Users, Award, Globe } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { CarouselApi } from "@/components/ui/carousel";
-import { Helmet } from "react-helmet-async";
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -67,25 +66,10 @@ const AboutSection = () => {
     label: "Years Experience"
   }];
 
-  // About Page Schema
-  const aboutSchema = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About DrewVerse Design",
-    "description": "DrewVerse Design is a creative digital agency based in Kampala, Uganda. Since 2023, we've been dedicated to delivering high-quality, affordable digital solutions.",
-    "mainEntity": {
-      "@type": "Organization",
-      "@id": "https://drewversedesign.online/#organization"
-    }
-  };
-
+  // About Page Schema (moved to Index.tsx for proper SEO implementation)
+  
   return (
     <section id="about" ref={sectionRef} className="bg-gradient-to-b from-black to-metal-900 py-0 md:py-0">
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(aboutSchema)}
-        </script>
-      </Helmet>
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
           <div className="order-2 md:order-1">

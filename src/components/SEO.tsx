@@ -1,5 +1,4 @@
 
-import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
@@ -9,7 +8,7 @@ interface SEOProps {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
-  structuredData?: any;
+  structuredData?: object | object[];
   children?: React.ReactNode;
 }
 
@@ -29,6 +28,25 @@ const SEO = ({
   const metaDescription = description || "DrewVerse Design is Uganda's premier digital agency specializing in custom web design, mobile apps, and branding solutions.";
   const metaImage = ogImage || "/lovable-uploads/dff2717d-6759-4360-ae3a-c7d8f959446f.png";
   const url = canonicalUrl || "https://drewversedesign.online";
+
+  // Format structured data for JSON-LD
+  const getStructuredDataScripts = () => {
+    if (!structuredData) return null;
+    
+    if (Array.isArray(structuredData)) {
+      return structuredData.map((data, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(data)}
+        </script>
+      ));
+    }
+    
+    return (
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+    );
+  };
 
   return (
     <Helmet>
@@ -52,11 +70,7 @@ const SEO = ({
       <meta name="twitter:image" content={metaImage} />
       
       {/* Structured Data / JSON-LD */}
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      )}
+      {getStructuredDataScripts()}
       
       {children}
     </Helmet>

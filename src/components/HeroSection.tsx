@@ -1,21 +1,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { getVideoSchema } from "@/utils/structured-data";
-import { Helmet } from "react-helmet-async";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoUrl = "https://github.com/drewversedesign/images-for-drewverse-website/raw/refs/heads/main/DREWVERSE%20DESIGN%20UGANDA%20(2).mp4";
   const posterUrl = "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true";
-
-  const videoSchema = getVideoSchema(
-    videoUrl,
-    posterUrl,
-    "DrewVerse Design Uganda: Creative Digital Solutions",
-    "Explore DrewVerse Design's creative digital solutions for businesses in Uganda and beyond."
-  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,11 +28,6 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(videoSchema)}
-        </script>
-      </Helmet>
       <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black z-10"></div>
         <video 

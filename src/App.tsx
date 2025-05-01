@@ -27,11 +27,11 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <HelmetProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
+      <BrowserRouter>
+        <HelmetProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
             <Routes>
               <Route path={META_TAGS.home.url} element={<Index />} />
               <Route path={META_TAGS.about.url} element={<About />} />
@@ -43,10 +43,10 @@ const App = () => {
               <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </BrowserRouter>
-          <CookieConsent />
-        </TooltipProvider>
-      </HelmetProvider>
+            <CookieConsent />
+          </TooltipProvider>
+        </HelmetProvider>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 };
