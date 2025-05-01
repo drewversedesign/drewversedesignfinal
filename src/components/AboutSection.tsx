@@ -87,7 +87,7 @@ const AboutSection = () => {
 
           <div className="order-1 md:order-2">
             <div className="space-y-4 md:space-y-6 text-left">
-              <div className="inline-block px-3 md:px-4 py-1 md:py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">
+              <div className="inline-block px-3 md:px-4 py-1 md:py-2 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom bg-zinc-950">
                 <span className="text-white/80 font-mono text-xs uppercase tracking-wider">About DrewVerse</span>
               </div>
               
