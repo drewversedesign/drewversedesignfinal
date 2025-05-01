@@ -1,26 +1,23 @@
-
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-
 interface BlogPostHeaderProps {
   title: string;
   date: string;
   readTime: string;
   image: string;
 }
-
-export const BlogPostHeader = ({ title, date, readTime, image }: BlogPostHeaderProps) => {
-  return (
-    <div className="mb-8">
+export const BlogPostHeader = ({
+  title,
+  date,
+  readTime,
+  image
+}: BlogPostHeaderProps) => {
+  return <div className="mb-8 my-[50px]">
       <Link to="/blog" className="inline-flex items-center text-white hover:text-white/80 transition-colors mb-6">
         <ArrowLeft className="mr-2 h-4 w-4" /> Back to all posts
       </Link>
       
-      <img 
-        src={image} 
-        alt={title} 
-        className="w-full h-64 md:h-80 object-cover rounded-lg mb-6"
-      />
+      <img src={image} alt={title} className="w-full h-64 md:h-80 object-cover rounded-lg mb-6" />
       
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-display text-white mb-4">{title}</h1>
       
@@ -36,6 +33,5 @@ export const BlogPostHeader = ({ title, date, readTime, image }: BlogPostHeaderP
       </div>
       
       <div className="w-16 h-1 bg-orange-500"></div>
-    </div>
-  );
+    </div>;
 };
