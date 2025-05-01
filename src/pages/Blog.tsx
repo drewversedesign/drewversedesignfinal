@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -8,38 +7,27 @@ import { META_TAGS } from "@/utils/meta-tags";
 import { blogPosts } from "@/data/blog-posts";
 import SEO from "@/components/SEO";
 import { blogListingSchema, getBreadcrumbSchema } from "@/utils/structured-data";
-
 const Blog = () => {
   useEffect(() => {
     document.title = META_TAGS.blog.title;
-    
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   }, []);
-
-  const breadcrumbItems = [
-    { name: "Home", item: "https://drewversedesign.online/" },
-    { name: "Blog", item: "https://drewversedesign.online/blog" }
-  ];
-  
-  const structuredData = [
-    blogListingSchema,
-    getBreadcrumbSchema(breadcrumbItems)
-  ];
-
-  return (
-    <div className="bg-black min-h-screen flex flex-col">
-      <SEO
-        title="Web Design Insights & Tips | DrewVerse Design Blog"
-        description="Stay updated with the latest trends, tips, and strategies in web design and digital marketing at the DrewVerse Design Blog. Learn how to grow your online presence."
-        canonicalUrl="https://drewversedesign.online/blog"
-        structuredData={structuredData}
-      />
+  const breadcrumbItems = [{
+    name: "Home",
+    item: "https://drewversedesign.online/"
+  }, {
+    name: "Blog",
+    item: "https://drewversedesign.online/blog"
+  }];
+  const structuredData = [blogListingSchema, getBreadcrumbSchema(breadcrumbItems)];
+  return <div className="bg-black min-h-screen flex flex-col">
+      <SEO title="Web Design Insights & Tips | DrewVerse Design Blog" description="Stay updated with the latest trends, tips, and strategies in web design and digital marketing at the DrewVerse Design Blog. Learn how to grow your online presence." canonicalUrl="https://drewversedesign.online/blog" structuredData={structuredData} />
       <Navbar />
       <main className="flex-grow">
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 py-12 my-[50px]">
           <h1 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
             {META_TAGS.blog.h1}
           </h1>
@@ -51,18 +39,10 @@ const Blog = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <article key={post.id} className="glass-card overflow-hidden group hover:-translate-y-1 transition-transform">
+            {blogPosts.map((post, index) => <article key={post.id} className="glass-card overflow-hidden group hover:-translate-y-1 transition-transform">
                 <Link to={`/blog/${post.id}`}>
                   <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={post.image} 
-                      alt={post.title} 
-                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                      loading={index < 3 ? "eager" : "lazy"} 
-                      width="400"
-                      height="225"
-                    />
+                    <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform group-hover:scale-105" loading={index < 3 ? "eager" : "lazy"} width="400" height="225" />
                   </div>
                   
                   <div className="p-6">
@@ -84,14 +64,11 @@ const Blog = () => {
                     </div>
                   </div>
                 </Link>
-              </article>
-            ))}
+              </article>)}
           </div>
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Blog;
