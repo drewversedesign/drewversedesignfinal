@@ -58,7 +58,7 @@ const AboutSection = () => {
 
   // About Page Schema (moved to Index.tsx for proper SEO implementation)
 
-  return <section id="about" ref={sectionRef} className="bg-gradient-to-b from-black to-metal-900 py-0 md:py-0">
+  return <section id="about" ref={sectionRef} className="bg-gradient-to-b from-black to-metal-900 py-0 md:py-0 bg-zinc-50">
       <div className="section-container bg-zinc-50">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
           <div className="order-2 md:order-1">
