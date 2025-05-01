@@ -1,0 +1,6 @@
+
+# Netlify redirects file
+# For the blog section specifically
+/blog/*    /index.html   200
+# General fallback
+/*         /index.html   200
