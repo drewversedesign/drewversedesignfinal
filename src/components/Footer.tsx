@@ -1,5 +1,6 @@
 
 import { Instagram, Linkedin, ChevronUp } from "lucide-react";
+
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -7,11 +8,31 @@ const Footer = () => {
       behavior: "smooth"
     });
   };
-  return <footer className="bg-black border-t border-white/10 py-0">
+
+  // Use regular <a> tags for hash links
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, target: string) => {
+    e.preventDefault();
+    const element = document.getElementById(target.substring(1));
+    if (element) {
+      const navHeight = 80;
+      const offsetPosition = element.offsetTop - navHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
+  return (
+    <footer className="bg-black border-t border-white/10 py-0">
       <div className="section-container">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
-            <a href="#hero" className="text-white font-display text-xl uppercase tracking-wider">
+            <a 
+              href="/" 
+              className="text-white font-display text-xl uppercase tracking-wider"
+            >
               DREWVERSE
               <span className="text-xs font-mono tracking-widest block text-orange-500">DESIGN </span>
             </a>
@@ -31,26 +52,26 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-display font-bold mb-4">About</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-white/70 hover:text-white transition-colors text-sm">Our Story</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors text-sm">Blog</a></li>
+              <li><a href="#about" onClick={(e) => handleHashClick(e, "#about")} className="text-white/70 hover:text-white transition-colors text-sm">Our Story</a></li>
+              <li><a href="/blog" className="text-white/70 hover:text-white transition-colors text-sm">Blog</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-white font-display font-bold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Web Development</a></li>
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Mobile Apps</a></li>
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">UI/UX Design</a></li>
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors text-sm">Branding</a></li>
+              <li><a href="#services" onClick={(e) => handleHashClick(e, "#services")} className="text-white/70 hover:text-white transition-colors text-sm">Web Development</a></li>
+              <li><a href="#services" onClick={(e) => handleHashClick(e, "#services")} className="text-white/70 hover:text-white transition-colors text-sm">Mobile Apps</a></li>
+              <li><a href="#services" onClick={(e) => handleHashClick(e, "#services")} className="text-white/70 hover:text-white transition-colors text-sm">UI/UX Design</a></li>
+              <li><a href="#services" onClick={(e) => handleHashClick(e, "#services")} className="text-white/70 hover:text-white transition-colors text-sm">Branding</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-white font-display font-bold mb-4">Portfolio</h4>
             <ul className="space-y-2">
-              <li><a href="#showcase" className="text-white/70 hover:text-white transition-colors text-sm">Latest Work</a></li>
-              <li><a href="#showcase" className="text-white/70 hover:text-white transition-colors text-sm">Case Studies</a></li>
+              <li><a href="#showcase" onClick={(e) => handleHashClick(e, "#showcase")} className="text-white/70 hover:text-white transition-colors text-sm">Latest Work</a></li>
+              <li><a href="#showcase" onClick={(e) => handleHashClick(e, "#showcase")} className="text-white/70 hover:text-white transition-colors text-sm">Case Studies</a></li>
             </ul>
           </div>
           
@@ -70,8 +91,8 @@ const Footer = () => {
           </p>
           
           <div className="flex space-x-6">
-            <a href="#" className="text-white/50 hover:text-white text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-white/50 hover:text-white text-sm transition-colors">Terms of Service</a>
+            <a href="/privacy" className="text-white/50 hover:text-white text-sm transition-colors">Privacy Policy</a>
+            <a href="/terms" className="text-white/50 hover:text-white text-sm transition-colors">Terms of Service</a>
           </div>
         </div>
         
@@ -79,6 +100,8 @@ const Footer = () => {
           <ChevronUp className="h-5 w-5 text-white" />
         </button>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

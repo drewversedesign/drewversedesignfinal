@@ -1,5 +1,4 @@
 
-import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,14 +30,18 @@ export const MobileMenu = ({ isOpen, close, links, handleNavClick }: MobileMenuP
     >
       <div className="relative h-full flex flex-col">
         <div className="flex justify-between items-center py-5 px-6 border-b border-white/10">
-          <Link 
-            to="/" 
+          <a 
+            href="/" 
             className="text-white font-display text-xl uppercase tracking-wider"
-            onClick={close}
+            onClick={(e) => {
+              e.preventDefault();
+              close();
+              window.location.href = '/';
+            }}
           >
             DREWVERSE
             <span className="text-xs font-mono tracking-widest block text-orange-400">DESIGN</span>
-          </Link>
+          </a>
           
           <button
             onClick={close}
@@ -52,45 +55,42 @@ export const MobileMenu = ({ isOpen, close, links, handleNavClick }: MobileMenuP
         <div className="flex flex-col flex-1 overflow-y-auto py-8 px-6">
           <nav className="flex flex-col space-y-6 items-center">
             {links.map(link => 
-              link.isHash ? (
-                <a 
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
+              <a 
+                key={link.name}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (link.isHash) {
                     handleNavClick(link.href, link.isHash);
-                  }}
-                  className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2"
-                >
-                  {link.name.toUpperCase()}
-                </a>
-              ) : (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  onClick={close}
-                  className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2"
-                >
-                  {link.name.toUpperCase()}
-                </Link>
-              )
+                  } else {
+                    close();
+                    window.location.href = link.href;
+                  }
+                }}
+                className="text-2xl font-display text-white/80 hover:text-white transition-colors py-2"
+              >
+                {link.name.toUpperCase()}
+              </a>
             )}
           </nav>
         </div>
         
         <div className="p-6 border-t border-white/10 flex justify-center">
-          <Link
-            to={links[0].isHash ? "#contact" : "/#contact"}
-            onClick={() => {
+          <a
+            href={links[0].isHash ? "#contact" : "/#contact"}
+            onClick={(e) => {
+              e.preventDefault();
               close();
               if (links[0].isHash) {
                 handleNavClick("#contact", true);
+              } else {
+                window.location.href = "/#contact";
               }
             }}
             className="bg-orange-500 text-white px-8 py-3 rounded-md font-mono text-lg transition-all hover:bg-orange-600 w-full text-center"
           >
             START PROJECT
-          </Link>
+          </a>
         </div>
       </div>
     </div>

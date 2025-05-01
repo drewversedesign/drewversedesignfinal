@@ -1,6 +1,4 @@
 
-import { Link } from "react-router-dom";
-
 interface NavLink {
   name: string;
   href: string;
@@ -16,23 +14,19 @@ export const NavLinks = ({ links, handleNavClick }: NavLinksProps) => {
   return (
     <div className="hidden md:flex space-x-8 items-center">
       {links.map(link => 
-        link.isHash ? (
-          <a 
-            key={link.name} 
-            href={link.href}
-            className="font-mono text-sm text-white/80 hover:text-white transition-colors hover-underline"
-          >
-            {link.name.toUpperCase()}
-          </a>
-        ) : (
-          <Link 
-            key={link.name} 
-            to={link.href}
-            className="font-mono text-sm text-white/80 hover:text-white transition-colors hover-underline"
-          >
-            {link.name.toUpperCase()}
-          </Link>
-        )
+        <a 
+          key={link.name} 
+          href={link.href}
+          className="font-mono text-sm text-white/80 hover:text-white transition-colors hover-underline"
+          onClick={(e) => {
+            if (link.isHash) {
+              e.preventDefault();
+              handleNavClick && handleNavClick(link.href, link.isHash);
+            }
+          }}
+        >
+          {link.name.toUpperCase()}
+        </a>
       )}
       <StartProjectButton isHomePage={links[0].isHash} />
     </div>
@@ -40,10 +34,24 @@ export const NavLinks = ({ links, handleNavClick }: NavLinksProps) => {
 };
 
 const StartProjectButton = ({ isHomePage }: { isHomePage: boolean }) => (
-  <Link 
-    to={isHomePage ? "#contact" : "/#contact"}
+  <a 
+    href={isHomePage ? "#contact" : "/#contact"}
     className="bg-orange-500 text-white px-5 py-2 rounded-md font-mono text-sm transition-all hover:bg-orange-600"
+    onClick={(e) => {
+      if (isHomePage) {
+        e.preventDefault();
+        const element = document.getElementById("contact");
+        if (element) {
+          const navHeight = 80;
+          const offsetPosition = element.offsetTop - navHeight;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }
+    }}
   >
     START PROJECT
-  </Link>
+  </a>
 );

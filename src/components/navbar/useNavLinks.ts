@@ -1,17 +1,18 @@
 
-import { useLocation } from "react-router-dom";
 import { META_TAGS } from "@/utils/meta-tags";
 
 export const useNavLinks = () => {
-  let location;
+  // Determine if we're on the home page based on window.location
+  // This doesn't rely on React Router hooks
   let isHomePage = true;
   
   try {
-    location = useLocation();
-    isHomePage = location.pathname === META_TAGS.home.url;
+    if (typeof window !== 'undefined') {
+      const pathname = window.location.pathname;
+      isHomePage = pathname === '/' || pathname === META_TAGS.home.url;
+    }
   } catch (error) {
-    // We're outside a Router context, default to home page links
-    console.warn("useLocation() hook called outside Router context, defaulting to home page links");
+    console.warn("Error determining page location, defaulting to home page links");
     isHomePage = true;
   }
 
