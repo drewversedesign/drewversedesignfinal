@@ -1,77 +1,78 @@
 
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BlogPostHeader } from "@/components/blog/BlogPostHeader";
 import { BlogPostCTA } from "@/components/blog/BlogPostCTA";
 import { BlogPostNotFound } from "@/components/blog/BlogPostNotFound";
-import type { BlogPost } from "@/data/blog-posts"; // Type-only import for BlogPost interface
-import { blogPosts } from "@/data/blog-posts"; // Adding import for blogPosts array
-
-interface BlogPostParams {
-  id: string;
-}
+import { blogPosts } from "@/data/blog-posts";
+import SEO from "@/components/SEO";
+import { getBlogPostSchema, getBreadcrumbSchema } from "@/utils/structured-data";
 
 const BlogPost = () => {
-  const { id } = useParams<keyof BlogPostParams>() as BlogPostParams;
-  const [post, setPost] = useState<BlogPost | null>(null);
+  const { id } = useParams();
+  const post = blogPosts.find(post => post.id === id);
   
   useEffect(() => {
-    const foundPost = blogPosts.find(post => post.id === id);
-    setPost(foundPost);
-    window.scrollTo(0, 0);
+    if (!post) return;
+    
+    document.title = post.metaTitle || `${post.title} | DrewVerse Design Blog`;
+    
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [post]);
 
-    // Update meta tags when post changes
-    if (foundPost) {
-      document.title = foundPost.metaTitle || foundPost.title;
-      
-      // Update meta description
-      let metaDescription = document.querySelector('meta[name="description"]');
-      if (!metaDescription) {
-        metaDescription = document.createElement('meta');
-        metaDescription.setAttribute('name', 'description');
-        document.head.appendChild(metaDescription);
-      }
-      metaDescription.setAttribute('content', foundPost.metaDescription || foundPost.description);
-
-      // Update meta keywords
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (!metaKeywords) {
-        metaKeywords = document.createElement('meta');
-        metaKeywords.setAttribute('name', 'keywords');
-        document.head.appendChild(metaKeywords);
-      }
-      metaKeywords.setAttribute('content', foundPost.metaKeywords || '');
-    }
-  }, [id]);
-  
   if (!post) {
     return <BlogPostNotFound />;
   }
 
+  // Create breadcrumb items for structured data
+  const breadcrumbItems = [
+    { name: "Home", item: "https://drewversedesign.online/" },
+    { name: "Blog", item: "https://drewversedesign.online/blog" },
+    { name: post.title, item: `https://drewversedesign.online/blog/${post.id}` }
+  ];
+  
+  // Get the structured data for this blog post
+  const structuredData = [
+    getBlogPostSchema(post),
+    getBreadcrumbSchema(breadcrumbItems)
+  ];
+
   return (
-    <div className="min-h-screen bg-black">
+    <div className="bg-black min-h-screen flex flex-col">
+      <SEO
+        title={post.title}
+        description={post.description}
+        canonicalUrl={`https://drewversedesign.online/blog/${post.id}`}
+        ogTitle={post.metaTitle || post.title}
+        ogDescription={post.metaDescription || post.description}
+        ogImage={post.image}
+        structuredData={structuredData}
+      />
       <Navbar />
-      
-      <div className="pt-24 pb-20">
-        <div className="max-w-4xl mx-auto px-4">
-          <BlogPostHeader 
-            title={post.title}
-            date={post.date}
-            readTime={post.readTime}
-            image={post.image}
-          />
-          
-          <div 
-            className="prose prose-invert prose-lg max-w-none prose-a:text-white prose-a:underline prose-a:hover:text-white/80"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-          
-          <BlogPostCTA />
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 py-12">
+          <article className="max-w-3xl mx-auto">
+            <BlogPostHeader
+              title={post.title}
+              date={post.date}
+              readTime={post.readTime}
+              image={post.image}
+            />
+            
+            <div 
+              className="prose prose-invert prose-lg max-w-none"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+            
+            <BlogPostCTA />
+          </article>
         </div>
-      </div>
-      
+      </main>
       <Footer />
     </div>
   );

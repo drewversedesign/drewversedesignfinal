@@ -2,9 +2,6 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://drewversedesign.online/sitemap.xml
-
 # Specific page rules
 Allow: /about
 Allow: /portfolio
@@ -12,6 +9,11 @@ Allow: /services
 Allow: /blog
 Allow: /contact
 Allow: /start-project
+
+# Sitemaps
+Sitemap: https://drewversedesign.online/sitemap.xml
+Sitemap: https://drewversedesign.online/image-sitemap.xml
+Sitemap: https://drewversedesign.online/video-sitemap.xml
 
 # Prevent access to any potential admin areas
 Disallow: /admin/

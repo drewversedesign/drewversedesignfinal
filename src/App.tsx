@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import { HelmetProvider } from 'react-helmet-async';
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -26,24 +27,26 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path={META_TAGS.home.url} element={<Index />} />
-            <Route path={META_TAGS.about.url} element={<About />} />
-            <Route path={META_TAGS.portfolio.url} element={<Portfolio />} />
-            <Route path={META_TAGS.services.url} element={<Services />} />
-            <Route path={META_TAGS.contact.url} element={<Contact />} />
-            <Route path={META_TAGS.startProject.url} element={<StartProject />} />
-            <Route path={META_TAGS.blog.url} element={<Blog />} />
-            <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-        <CookieConsent />
-      </TooltipProvider>
+      <HelmetProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path={META_TAGS.home.url} element={<Index />} />
+              <Route path={META_TAGS.about.url} element={<About />} />
+              <Route path={META_TAGS.portfolio.url} element={<Portfolio />} />
+              <Route path={META_TAGS.services.url} element={<Services />} />
+              <Route path={META_TAGS.contact.url} element={<Contact />} />
+              <Route path={META_TAGS.startProject.url} element={<StartProject />} />
+              <Route path={META_TAGS.blog.url} element={<Blog />} />
+              <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+          <CookieConsent />
+        </TooltipProvider>
+      </HelmetProvider>
     </QueryClientProvider>
   );
 };

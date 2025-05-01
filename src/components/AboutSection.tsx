@@ -4,6 +4,7 @@ import { Briefcase, Users, Award, Globe } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { CarouselApi } from "@/components/ui/carousel";
+import { Helmet } from "react-helmet-async";
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -66,8 +67,25 @@ const AboutSection = () => {
     label: "Years Experience"
   }];
 
+  // About Page Schema
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About DrewVerse Design",
+    "description": "DrewVerse Design is a creative digital agency based in Kampala, Uganda. Since 2023, we've been dedicated to delivering high-quality, affordable digital solutions.",
+    "mainEntity": {
+      "@type": "Organization",
+      "@id": "https://drewversedesign.online/#organization"
+    }
+  };
+
   return (
     <section id="about" ref={sectionRef} className="bg-gradient-to-b from-black to-metal-900 py-0 md:py-0">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(aboutSchema)}
+        </script>
+      </Helmet>
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-center">
           <div className="order-2 md:order-1">
@@ -76,10 +94,12 @@ const AboutSection = () => {
             }}>
               <div className="aspect-ratio-4/3 overflow-hidden rounded-lg reveal fade-right">
                 <img 
-                  alt="Creative workspace with digital design tools" 
+                  alt="Creative workspace with digital design tools at DrewVerse Design studio" 
                   className="w-full h-full object-cover"
                   src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true"
                   loading="lazy"
+                  width="800"
+                  height="600"
                 />
               </div>
               {!isMobile && (
@@ -87,10 +107,12 @@ const AboutSection = () => {
                   animationDelay: "200ms"
                 }}>
                   <img 
-                    alt="Web development process" 
+                    alt="DrewVerse Design logo" 
                     src="https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345766_x-removebg-preview.png?raw=true" 
                     className="w-full h-full object-scale-down transform translate-y-8"
                     loading="lazy"
+                    width="192"
+                    height="192"
                   />
                 </div>
               )}
@@ -152,7 +174,7 @@ const AboutSection = () => {
                     animationDelay: `${index * 100}ms`
                   }}>
                     <div className="bg-white/10 rounded-full p-2 md:p-3 inline-block mb-2 md:mb-4">
-                      <stat.icon className="h-4 w-4 md:h-6 md:w-6 text-white" />
+                      <stat.icon className="h-4 w-4 md:h-6 md:w-6 text-white" aria-hidden="true" />
                     </div>
                     <div className="text-white font-display text-2xl md:text-4xl font-bold">
                       {stat.value}

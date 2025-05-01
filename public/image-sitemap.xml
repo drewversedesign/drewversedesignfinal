@@ -1,0 +1,81 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://drewversedesign.online/</loc>
+    <image:image>
+      <image:loc>https://drewversedesign.online/lovable-uploads/dff2717d-6759-4360-ae3a-c7d8f959446f.png</image:loc>
+      <image:title>DrewVerse Design Logo</image:title>
+      <image:caption>Official logo of DrewVerse Design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drewversedesign.online/lovable-uploads/9cdb49e9-d93a-4cea-bf17-a6252e912f14.png</image:loc>
+      <image:title>DrewVerse Design Favicon</image:title>
+      <image:caption>Website favicon for DrewVerse Design</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://drewversedesign.online/about</loc>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true</image:loc>
+      <image:title>DrewVerse Design Studio</image:title>
+      <image:caption>A view of DrewVerse Design's creative workspace</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345766_x-removebg-preview.png?raw=true</image:loc>
+      <image:title>DrewVerse Design Logo Display</image:title>
+      <image:caption>DrewVerse Design branded logo display</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://drewversedesign.online/portfolio</loc>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(7).png?raw=true</image:loc>
+      <image:title>Tattoo Studio Website Design</image:title>
+      <image:caption>Portfolio example of a tattoo studio website design by DrewVerse</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(9).png?raw=true</image:loc>
+      <image:title>Portfolio Website Design</image:title>
+      <image:caption>Example of a creative portfolio website design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(10).png?raw=true</image:loc>
+      <image:title>Furniture Store E-commerce Design</image:title>
+      <image:caption>E-commerce website design for a furniture store</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(8).png?raw=true</image:loc>
+      <image:title>Foundation Website Design</image:title>
+      <image:caption>Non-profit foundation website design example</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345986_y.jpg?raw=true</image:loc>
+      <image:title>Tech Blog Platform Design</image:title>
+      <image:caption>Modern tech blog platform website design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/photo_5794068069973345987_y.jpg?raw=true</image:loc>
+      <image:title>Corporate Website Design</image:title>
+      <image:caption>Professional corporate website design example</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Blog Images -->
+  <url>
+    <loc>https://drewversedesign.online/blog</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&amp;auto=format&amp;fit=crop&amp;q=60</image:loc>
+      <image:title>The Future of Web Design Services</image:title>
+      <image:caption>Illustrative image for blog post on future web design trends</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&amp;auto=format&amp;fit=crop&amp;q=60</image:loc>
+      <image:title>Why Choose DrewVerse Design</image:title>
+      <image:caption>Blog post feature image for choosing the right web design agency</image:caption>
+    </image:image>
+  </url>
+</urlset>

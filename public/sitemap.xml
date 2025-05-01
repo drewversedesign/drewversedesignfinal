@@ -1,46 +1,116 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://drewversedesign.online/</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://drewversedesign.online/lovable-uploads/dff2717d-6759-4360-ae3a-c7d8f959446f.png</image:loc>
+      <image:title>DrewVerse Design Logo</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true</video:thumbnail_loc>
+      <video:title>DrewVerse Design Uganda: Creative Digital Solutions</video:title>
+      <video:description>Explore DrewVerse Design's creative digital solutions for businesses in Uganda and beyond.</video:description>
+      <video:content_loc>https://github.com/drewversedesign/images-for-drewverse-website/raw/refs/heads/main/DREWVERSE%20DESIGN%20UGANDA%20(2).mp4</video:content_loc>
+      <video:duration>93</video:duration>
+    </video:video>
   </url>
+  
+  <!-- Main Pages -->
   <url>
     <loc>https://drewversedesign.online/about</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true</image:loc>
+      <image:title>DrewVerse Design Studio</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://drewversedesign.online/portfolio</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://drewversedesign.online/services</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://drewversedesign.online/blog</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://drewversedesign.online/contact</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
   <url>
     <loc>https://drewversedesign.online/start-project</loc>
-    <lastmod>2025-04-26</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://drewversedesign.online/blog/future-web-design-services</loc>
+    <lastmod>2025-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&amp;auto=format&amp;fit=crop&amp;q=60</image:loc>
+      <image:title>The Future of Web Design Services</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://drewversedesign.online/blog/why-choose-drewverse-design</loc>
+    <lastmod>2025-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&amp;auto=format&amp;fit=crop&amp;q=60</image:loc>
+      <image:title>Why Choose DrewVerse Design</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://drewversedesign.online/blog/responsive-web-design-trends</loc>
+    <lastmod>2025-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&amp;auto=format&amp;fit=crop&amp;q=60</image:loc>
+      <image:title>Responsive Web Design Trends</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://drewversedesign.online/blog/web-design-uganda-guide</loc>
+    <lastmod>2025-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&amp;auto=format&amp;fit=crop&amp;q=60</image:loc>
+      <image:title>Web Design Services in Uganda</image:title>
+    </image:image>
   </url>
 </urlset>

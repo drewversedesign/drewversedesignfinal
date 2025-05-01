@@ -1,0 +1,23 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://drewversedesign.online/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true</video:thumbnail_loc>
+      <video:title>DrewVerse Design Uganda: Creative Digital Solutions</video:title>
+      <video:description>Explore DrewVerse Design's creative digital solutions for businesses in Uganda and beyond. This video showcases our approach to web design and digital marketing.</video:description>
+      <video:content_loc>https://github.com/drewversedesign/images-for-drewverse-website/raw/refs/heads/main/DREWVERSE%20DESIGN%20UGANDA%20(2).mp4</video:content_loc>
+      <video:duration>93</video:duration>
+      <video:publication_date>2023-01-15T08:00:00+03:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:tag>web design</video:tag>
+      <video:tag>uganda</video:tag>
+      <video:tag>digital solutions</video:tag>
+      <video:tag>drewverse design</video:tag>
+    </video:video>
+  </url>
+</urlset>

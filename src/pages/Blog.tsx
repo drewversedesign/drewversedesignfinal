@@ -1,62 +1,94 @@
 
-import { BookOpen } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
+import { META_TAGS } from "@/utils/meta-tags";
 import { blogPosts } from "@/data/blog-posts";
-import { useEffect } from "react";
-import { updateMetaTags } from "@/utils/meta-tags";
+import SEO from "@/components/SEO";
+import { blogListingSchema, getBreadcrumbSchema } from "@/utils/structured-data";
 
 const Blog = () => {
   useEffect(() => {
-    updateMetaTags('blog');
+    document.title = META_TAGS.blog.title;
+    
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }, []);
 
+  const breadcrumbItems = [
+    { name: "Home", item: "https://drewversedesign.online/" },
+    { name: "Blog", item: "https://drewversedesign.online/blog" }
+  ];
+  
+  const structuredData = [
+    blogListingSchema,
+    getBreadcrumbSchema(breadcrumbItems)
+  ];
+
   return (
-    <div className="min-h-screen bg-black">
+    <div className="bg-black min-h-screen flex flex-col">
+      <SEO
+        title="Web Design Insights & Tips | DrewVerse Design Blog"
+        description="Stay updated with the latest trends, tips, and strategies in web design and digital marketing at the DrewVerse Design Blog. Learn how to grow your online presence."
+        canonicalUrl="https://drewversedesign.online/blog"
+        structuredData={structuredData}
+      />
       <Navbar />
-      
-      <div className="pt-24">
-        <div className="section-container">
-          <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-display text-white mb-4">DrewVerse Design Blog</h1>
-            <p className="text-white/70 max-w-2xl mx-auto">
-              Expert insights on web design, development, and digital solutions in Uganda and East Africa
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 py-12">
+          <h1 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+            {META_TAGS.blog.h1}
+          </h1>
+          
+          <div className="max-w-3xl mx-auto mb-12">
+            <p className="text-white/80 font-mono text-lg">
+              Explore our latest insights on web design, digital marketing, and online business growth.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <Link to={`/blog/${post.id}`} key={index} className="block transition-transform hover:scale-[1.02]">
-                <Card className="bg-white/5 border-white/10 hover:bg-white/10 transition-all h-full">
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    className="w-full h-48 object-cover rounded-t-lg"
-                  />
-                  <CardHeader>
-                    <CardTitle className="text-white">{post.title}</CardTitle>
-                    <CardDescription className="text-white/70">
-                      {post.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between text-sm text-white/50">
-                      <div className="flex items-center gap-2">
-                        <BookOpen className="h-4 w-4" />
-                        {post.readTime}
-                      </div>
-                      <span>{post.date}</span>
+              <article key={post.id} className="glass-card overflow-hidden group hover:-translate-y-1 transition-transform">
+                <Link to={`/blog/${post.id}`}>
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                      loading={index < 3 ? "eager" : "lazy"} 
+                      width="400"
+                      height="225"
+                    />
+                  </div>
+                  
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-orange-500 font-mono text-xs">{post.date}</span>
+                      <span className="text-white/60 font-mono text-xs">{post.readTime}</span>
                     </div>
-                  </CardContent>
-                </Card>
-              </Link>
+                    
+                    <h2 className="text-white font-display text-xl mb-3 line-clamp-2">
+                      {post.title}
+                    </h2>
+                    
+                    <p className="text-white/70 font-mono text-sm mb-4 line-clamp-3">
+                      {post.description}
+                    </p>
+                    
+                    <div className="flex items-center text-orange-500 font-mono text-xs group-hover:text-white transition-colors">
+                      Read Article <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </Link>
+              </article>
             ))}
           </div>
         </div>
-      </div>
-      
+      </main>
       <Footer />
     </div>
   );
