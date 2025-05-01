@@ -27,13 +27,13 @@ const Blog = () => {
       <SEO title="Web Design Insights & Tips | DrewVerse Design Blog" description="Stay updated with the latest trends, tips, and strategies in web design and digital marketing at the DrewVerse Design Blog. Learn how to grow your online presence." canonicalUrl="https://drewversedesign.online/blog" structuredData={structuredData} />
       <Navbar />
       <main className="flex-grow">
-        <div className="container mx-auto px-4 py-12 my-[50px]">
-          <h1 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+        <div className="container mx-auto px-4 py-12 my-[50px] bg-zinc-50">
+          <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 text-zinc-950">
             {META_TAGS.blog.h1}
           </h1>
           
           <div className="max-w-3xl mx-auto mb-12">
-            <p className="text-white/80 font-mono text-lg">
+            <p className="font-mono text-lg text-zinc-950">
               Explore our latest insights on web design, digital marketing, and online business growth.
             </p>
           </div>
@@ -51,11 +51,11 @@ const Blog = () => {
                       <span className="text-white/60 font-mono text-xs">{post.readTime}</span>
                     </div>
                     
-                    <h2 className="text-white font-display text-xl mb-3 line-clamp-2">
+                    <h2 className="font-display text-xl mb-3 line-clamp-2 text-zinc-950">
                       {post.title}
                     </h2>
                     
-                    <p className="text-white/70 font-mono text-sm mb-4 line-clamp-3">
+                    <p className="font-mono text-sm mb-4 line-clamp-3 text-zinc-950">
                       {post.description}
                     </p>
                     
