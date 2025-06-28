@@ -29,22 +29,26 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <HelmetProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <Routes>
-              <Route path={META_TAGS.home.url} element={<Index />} />
-              <Route path={META_TAGS.about.url} element={<About />} />
-              <Route path={META_TAGS.portfolio.url} element={<Portfolio />} />
-              <Route path={META_TAGS.services.url} element={<Services />} />
-              <Route path={META_TAGS.contact.url} element={<Contact />} />
-              <Route path={META_TAGS.startProject.url} element={<StartProject />} />
-              <Route path={META_TAGS.blog.url} element={<Blog />} />
-              <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <CookieConsent />
-          </TooltipProvider>
+          <AuthProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              <Routes>
+                <Route path={META_TAGS.home.url} element={<Index />} />
+                <Route path={META_TAGS.about.url} element={<About />} />
+                <Route path={META_TAGS.portfolio.url} element={<Portfolio />} />
+                <Route path={META_TAGS.services.url} element={<Services />} />
+                <Route path={META_TAGS.contact.url} element={<Contact />} />
+                <Route path={META_TAGS.startProject.url} element={<StartProject />} />
+                <Route path={META_TAGS.blog.url} element={<Blog />} />
+                <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
+                <Route path="/auth" element={<Auth />} />
+                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <CookieConsent />
+            </TooltipProvider>
+          </AuthProvider>
         </HelmetProvider>
       </BrowserRouter>
     </QueryClientProvider>
