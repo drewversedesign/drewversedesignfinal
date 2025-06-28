@@ -15,7 +15,10 @@ import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import StartProject from "./pages/StartProject";
+import Auth from "./pages/Auth";
+import AdminDashboard from "./pages/AdminDashboard";
 import CookieConsent from "./components/CookieConsent";
+import { AuthProvider } from "./hooks/useAuth";
 import { META_TAGS } from "./utils/meta-tags";
 
 const queryClient = new QueryClient();
