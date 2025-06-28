@@ -1,4 +1,3 @@
-
 User-agent: *
 Allow: /
 
@@ -10,6 +9,9 @@ Allow: /blog
 Allow: /contact
 Allow: /start-project
 
+# Allow all blog posts
+Allow: /blog/
+
 # Sitemaps
 Sitemap: https://drewversedesign.online/sitemap.xml
 Sitemap: https://drewversedesign.online/image-sitemap.xml
@@ -19,3 +21,23 @@ Sitemap: https://drewversedesign.online/video-sitemap.xml
 Disallow: /admin/
 Disallow: /wp-admin/
 Disallow: /wp-login
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /logs/
+
+# Allow important assets
+Allow: /lovable-uploads/
+Allow: /public/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.ico
+Allow: /*.webp
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1

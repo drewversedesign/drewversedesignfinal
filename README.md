@@ -1,69 +1,155 @@
-# Welcome to your Lovable project
+# DrewVerse Design - Creative Web Design Agency
 
-## Project info
+A modern, responsive website for DrewVerse Design, a creative web design agency specializing in stunning websites, tech blogs, e-commerce stores, and creative portfolios.
 
-**URL**: https://lovable.dev/projects/227ae765-2999-4921-9e2e-9536f76ebab1
+## 🌟 Features
 
-## How can I edit this code?
+- **Modern Design**: Clean, professional interface built with React and Tailwind CSS
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **SEO Optimized**: Built-in SEO features with meta tags and structured data
+- **Blog System**: Complete blog functionality with dynamic routing
+- **Portfolio Showcase**: Interactive portfolio gallery with modal views
+- **Contact Forms**: Functional contact and project inquiry forms
+- **Cookie Consent**: GDPR-compliant cookie consent management
+- **Performance Optimized**: Fast loading with Vite build system
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+- **Frontend Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **Routing**: React Router DOM
+- **State Management**: TanStack Query (React Query)
+- **UI Components**: Radix UI primitives
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form with Zod validation
+- **SEO**: React Helmet Async
+- **Deployment**: Netlify
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/227ae765-2999-4921-9e2e-9536f76ebab1) and start prompting.
+## 📁 Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── navbar/         # Navigation components
+│   └── blog/           # Blog-specific components
+├── pages/              # Page components
+├── data/               # Static data and blog posts
+├── hooks/              # Custom React hooks
+├── lib/                # Utility libraries
+├── utils/              # Helper functions
+└── App.tsx             # Main application component
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
 
-**Use GitHub Codespaces**
+- Node.js (v18 or higher)
+- npm or yarn package manager
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Installation
 
-## What technologies are used for this project?
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   cd drewversedesignfinal
+   ```
 
-This project is built with .
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-## How can I deploy this project?
+4. **Open your browser**
+   Navigate to `http://localhost:5173` to view the application
 
-Simply open [Lovable](https://lovable.dev/projects/227ae765-2999-4921-9e2e-9536f76ebab1) and click on Share -> Publish.
+### Available Scripts
 
-## I want to use a custom domain - is that possible?
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## 📱 Pages
+
+- **Home** (`/`) - Landing page with hero section and services overview
+- **About** (`/about`) - Company information and team details
+- **Services** (`/services`) - Detailed service offerings
+- **Portfolio** (`/portfolio`) - Project showcase gallery
+- **Blog** (`/blog`) - Blog listing page
+- **Blog Post** (`/blog/:id`) - Individual blog post pages
+- **Contact** (`/contact`) - Contact form and information
+- **Start Project** (`/start-project`) - Project inquiry form
+
+## 🎨 Customization
+
+### Styling
+The project uses Tailwind CSS for styling. You can customize the design by:
+- Modifying `tailwind.config.ts` for theme customization
+- Updating component styles in the `components/` directory
+- Adding custom CSS in `src/index.css`
+
+### Content
+- Update company information in `src/utils/meta-tags.ts`
+- Modify blog posts in `src/data/blog-posts/`
+- Update portfolio projects in the portfolio components
+
+## 🚀 Deployment
+
+### Netlify (Recommended)
+1. Connect your GitHub repository to Netlify
+2. Set build command: `npm run build`
+3. Set publish directory: `dist`
+4. Deploy automatically on push to main branch
+
+### Manual Deployment
+```bash
+npm run build
+# Upload the 'dist' folder to your hosting provider
+```
+
+## 🔧 Environment Variables
+
+Create a `.env` file in the root directory for any environment-specific configurations:
+
+```env
+VITE_API_URL=your_api_url_here
+VITE_GOOGLE_ANALYTICS_ID=your_ga_id_here
+```
+
+## 📈 Performance
+
+- Lighthouse score optimized
+- Image optimization with proper sizing
+- Code splitting for better load times
+- SEO-friendly meta tags and structured data
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is private and proprietary to DrewVerse Design.
+
+## 📞 Support
+
+For support or questions about this project, please contact:
+- **Website**: [drewversedesign.online](https://drewversedesign.online)
+- **Email**: Contact through the website contact form
+
+---
+
+Built with ❤️ by DrewVerse Design
