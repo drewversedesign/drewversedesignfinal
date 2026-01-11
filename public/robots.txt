@@ -25,6 +25,9 @@ Disallow: /private/
 Disallow: /temp/
 Disallow: /cache/
 Disallow: /logs/
+Disallow: /components/
+Disallow: /utils/
+Disallow: /hooks/
 
 # Allow important assets
 Allow: /lovable-uploads/

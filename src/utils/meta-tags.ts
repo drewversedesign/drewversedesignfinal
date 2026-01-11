@@ -2,44 +2,44 @@
 export const META_TAGS = {
   home: {
     url: '/',
-    title: 'Creative Website Design Agency | DrewVerse Design | Build Your Online Presence',
-    description: 'DrewVerse Design (https://drewversedesign.online) builds stunning websites, tech blogs, e-commerce stores, and creative portfolios. Transform your ideas into a digital success story with our expert web design services.',
-    h1: 'Creative Web Design Solutions to Build Your Online Success'
+    title: 'Top Web Design Agency in Uganda | DrewVerse Design',
+    description: 'DrewVerse Design is a leading web design agency in Kampala, Uganda, offering professional, affordable websites, e-commerce stores, and tech blogs. Get a free quote today and boost your online presence!',
+    h1: 'Creative Web Design Solutions for Ugandan Businesses'
   },
   about: {
     url: '/about',
-    title: 'About DrewVerse Design | Expert Web Design & Development Services',
-    description: 'Learn about DrewVerse Design (https://drewversedesign.online/about) — a creative agency passionate about crafting unique, professional websites. Discover our mission, values, and how we bring your digital vision to life.',
+    title: 'About DrewVerse Design | Digital Agency in Kampala',
+    description: 'Learn about DrewVerse Design, a creative digital agency in Kampala, Uganda. Discover our mission, values, and the expert team dedicated to bringing your digital vision to life with passion and innovation.',
     h1: 'About DrewVerse Design: Creativity, Passion, and Innovation'
   },
   portfolio: {
     url: '/portfolio',
-    title: 'Web Design Portfolio | DrewVerse Design | Stunning Website Projects',
-    description: 'Browse the DrewVerse Design portfolio (https://drewversedesign.online/portfolio) featuring foundation websites, tech blog platforms, corporate websites, tattoo studios, personal portfolios, and e-commerce stores crafted with creativity and precision.',
-    h1: 'Our Portfolio: Creative Website Projects That Inspire'
+    title: 'Web Design Portfolio | Projects in Uganda | DrewVerse Design',
+    description: 'Explore the portfolio of DrewVerse Design, showcasing stunning websites for businesses in Uganda. See our work in e-commerce, corporate sites, tech blogs, and personal portfolios, all crafted with precision.',
+    h1: 'Our Portfolio: Inspiring Website Projects in Uganda'
   },
   services: {
     url: '/services',
-    title: 'Web Design Services | Website Development | DrewVerse Design',
-    description: 'Explore all the web design and development services at DrewVerse Design (https://drewversedesign.online/services). From website creation to SEO, branding, and e-commerce solutions, we create websites that drive business results.',
-    h1: 'Expert Web Design and Development Services'
+    title: 'Web Design Services in Uganda | SEO & Development | DrewVerse Design',
+    description: 'Discover expert web design, SEO, and development services in Kampala, Uganda. We offer affordable solutions for e-commerce, branding, and mobile app development to help your business succeed online.',
+    h1: 'Expert Web Design and Development Services in Uganda'
   },
   blog: {
     url: '/blog',
-    title: 'Web Design Insights & Tips | DrewVerse Design Blog',
-    description: 'Stay updated with the latest trends, tips, and strategies in web design and digital marketing at the DrewVerse Design Blog (https://drewversedesign.online/blog). Learn how to grow your online presence.',
+    title: 'Web Design & SEO Tips | DrewVerse Design Blog Uganda',
+    description: 'Get the latest web design trends, SEO strategies, and digital marketing tips from the DrewVerse Design blog. Grow your online presence with expert advice tailored for businesses in Uganda.',
     h1: 'Web Design Blog: Insights, Tips, and Trends'
   },
   contact: {
     url: '/contact',
-    title: 'Contact DrewVerse Design | Start Your Website Project Today',
-    description: 'Contact DrewVerse Design (https://drewversedesign.online/contact) and let\'s create a professional website tailored to your goals. We are ready to help you design, develop, and launch your next digital project.',
+    title: 'Contact Us | Web Design in Kampala | DrewVerse Design',
+    description: 'Ready to start your project? Contact DrewVerse Design in Kampala, Uganda, for a free consultation on web design, SEO, or mobile app development. Let\'s build your dream website today!',
     h1: 'Contact DrewVerse Design and Let\'s Build Your Dream Website'
   },
   startProject: {
     url: '/start-project',
-    title: 'Start Your Project | Work with DrewVerse Design | Get a Free Quote',
-    description: 'Start your web design project today with DrewVerse Design (https://drewversedesign.online/start-project). Request a free quote and turn your ideas into a stunning online experience.',
+    title: 'Start Your Project | Free Quote | Web Design Uganda',
+    description: 'Get a free quote for your web design project from DrewVerse Design, the top web design agency in Uganda. Let\'s turn your ideas into a stunning, professional website. Start today!',
     h1: 'Start Your Project with DrewVerse Design Today'
   }
 };
