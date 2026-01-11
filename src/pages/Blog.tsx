@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { META_TAGS } from "@/utils/meta-tags";
-import { blogPosts } from "@/data/blog-posts";
+import { blogPostMetadata } from "@/data/blog-posts";
 import SEO from "@/components/SEO";
 import { blogListingSchema, getBreadcrumbSchema } from "@/utils/structured-data";
 const Blog = () => {
@@ -39,7 +39,7 @@ const Blog = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => <article key={post.id} className="glass-card overflow-hidden group hover:-translate-y-1 transition-transform">
+            {blogPostMetadata.map((post, index) => <article key={post.id} className="glass-card overflow-hidden group hover:-translate-y-1 transition-transform">
                 <Link to={`/blog/${post.id}`}>
                   <div className="relative h-48 overflow-hidden">
                     <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform group-hover:scale-105" loading={index < 3 ? "eager" : "lazy"} width="400" height="225" />
