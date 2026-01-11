@@ -1,31 +1,63 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BlogPostHeader } from "@/components/blog/BlogPostHeader";
 import { BlogPostCTA } from "@/components/blog/BlogPostCTA";
 import { BlogPostNotFound } from "@/components/blog/BlogPostNotFound";
-import { blogPosts } from "@/data/blog-posts";
+import { blogPostsMap, BlogPost as BlogPostType } from "@/data/blog-posts";
 import SEO from "@/components/SEO";
 import { getBlogPostSchema, getBreadcrumbSchema } from "@/utils/structured-data";
 
 const BlogPost = () => {
-  const { id } = useParams();
-  const post = blogPosts.find(post => post.id === id);
-  
+  const { id } = useParams<{ id: string }>();
+  const [post, setPost] = useState<BlogPostType | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      if (!id || !blogPostsMap[id]) {
+        setNotFound(true);
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const postModule = await blogPostsMap[id]();
+        setPost(postModule.default);
+      } catch (error) {
+        console.error("Failed to load blog post", error);
+        setNotFound(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPost();
+  }, [id]);
+
   useEffect(() => {
     if (!post) return;
-    
+
     document.title = post.metaTitle || `${post.title} | DrewVerse Design Blog`;
     
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   }, [post]);
 
-  if (!post) {
+  if (loading) {
+    return (
+      <div className="bg-black min-h-screen flex items-center justify-center">
+        <p className="text-white text-lg">Loading...</p>
+      </div>
+    );
+  }
+
+  if (notFound || !post) {
     return <BlogPostNotFound />;
   }
 
