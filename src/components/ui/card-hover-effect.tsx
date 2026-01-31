@@ -14,7 +14,7 @@ export const CardHoverEffect = ({
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
@@ -50,9 +50,11 @@ export const CardHoverEffect = ({
           <div className="glass-card rounded-2xl p-6 h-full">
             {item.image && (
               <div className="relative w-full h-56 mb-4 overflow-hidden rounded-xl">
+                {/* ⚡ Bolt Optimization: Lazy load images to improve initial load performance */}
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                 />
               </div>
