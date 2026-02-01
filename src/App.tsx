@@ -4,22 +4,25 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { HelmetProvider } from 'react-helmet-async';
-import Index from "./pages/Index";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import NotFound from "./pages/NotFound";
-import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
-import StartProject from "./pages/StartProject";
-import Auth from "./pages/Auth";
-import AdminDashboard from "./pages/AdminDashboard";
 import CookieConsent from "./components/CookieConsent";
 import { AuthProvider } from "./hooks/useAuth";
 import { META_TAGS } from "./utils/meta-tags";
+import Loading from "./components/ui/loading";
+
+// Lazy load pages for performance optimization
+const Index = lazy(() => import("./pages/Index"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const About = lazy(() => import("./pages/About"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const Services = lazy(() => import("./pages/Services"));
+const Contact = lazy(() => import("./pages/Contact"));
+const StartProject = lazy(() => import("./pages/StartProject"));
+const Auth = lazy(() => import("./pages/Auth"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 
 const queryClient = new QueryClient();
 
@@ -36,19 +39,21 @@ const App = () => {
             <TooltipProvider>
               <Toaster />
               <Sonner />
-              <Routes>
-                <Route path={META_TAGS.home.url} element={<Index />} />
-                <Route path={META_TAGS.about.url} element={<About />} />
-                <Route path={META_TAGS.portfolio.url} element={<Portfolio />} />
-                <Route path={META_TAGS.services.url} element={<Services />} />
-                <Route path={META_TAGS.contact.url} element={<Contact />} />
-                <Route path={META_TAGS.startProject.url} element={<StartProject />} />
-                <Route path={META_TAGS.blog.url} element={<Blog />} />
-                <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
-                <Route path="/auth" element={<Auth />} />
-                <Route path="/admin" element={<AdminDashboard />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <Suspense fallback={<Loading />}>
+                <Routes>
+                  <Route path={META_TAGS.home.url} element={<Index />} />
+                  <Route path={META_TAGS.about.url} element={<About />} />
+                  <Route path={META_TAGS.portfolio.url} element={<Portfolio />} />
+                  <Route path={META_TAGS.services.url} element={<Services />} />
+                  <Route path={META_TAGS.contact.url} element={<Contact />} />
+                  <Route path={META_TAGS.startProject.url} element={<StartProject />} />
+                  <Route path={META_TAGS.blog.url} element={<Blog />} />
+                  <Route path={`${META_TAGS.blog.url}/:id`} element={<BlogPost />} />
+                  <Route path="/auth" element={<Auth />} />
+                  <Route path="/admin" element={<AdminDashboard />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
               <CookieConsent />
             </TooltipProvider>
           </AuthProvider>
