@@ -9,6 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { updateMetaTags } from "@/utils/meta-tags";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { 
   organizationSchema,
   websiteSchema,
@@ -18,6 +19,8 @@ import {
 } from "@/utils/structured-data";
 
 const Index = () => {
+  useScrollReveal();
+
   useEffect(() => {
     // Update meta tags for home page
     updateMetaTags('home');
@@ -28,25 +31,6 @@ const Index = () => {
       metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
     }
     
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const revealElements = document.querySelectorAll(".reveal");
-    revealElements.forEach((el) => observer.observe(el));
-
-    // Clean up
-    return () => {
-      revealElements.forEach((el) => observer.unobserve(el));
-    };
   }, []);
 
   // Video metadata
