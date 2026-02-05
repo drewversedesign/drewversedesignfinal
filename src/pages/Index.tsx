@@ -1,6 +1,7 @@
 
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -27,26 +28,6 @@ const Index = () => {
     if (metaViewport) {
       metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
     }
-    
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const revealElements = document.querySelectorAll(".reveal");
-    revealElements.forEach((el) => observer.observe(el));
-
-    // Clean up
-    return () => {
-      revealElements.forEach((el) => observer.unobserve(el));
-    };
   }, []);
 
   // Video metadata
