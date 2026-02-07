@@ -1,29 +1,10 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { CardHoverEffect } from "./ui/card-hover-effect";
 import { ArrowRight } from "lucide-react";
 import PortfolioModal from "./PortfolioModal";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const ShowcaseSection = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    const revealElements = document.querySelectorAll(".reveal");
-    revealElements.forEach(el => observer.observe(el));
-    return () => {
-      revealElements.forEach(el => observer.unobserve(el));
-    };
-  }, []);
-
-  const showcaseItems = [{
+const showcaseItems = [{
     title: "Tattoo Studio Website",
     description: "A dynamic website featuring an interactive portfolio and seamless booking functionality.",
     fullDescription: "A comprehensive website solution for a modern tattoo studio, featuring an interactive portfolio gallery, online booking system, artist profiles, and integrated payment processing. The design emphasizes the studio's artistic style while maintaining excellent usability.",
@@ -79,6 +60,13 @@ const ShowcaseSection = () => {
     link: "#"
   }];
 
+const ShowcaseSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  // Optimized scroll reveal animations using singleton IntersectionObserver
+  useScrollReveal(sectionRef);
+
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const element = e.target as HTMLElement;
     const projectCard = element.closest('[data-project-index]');
@@ -92,7 +80,7 @@ const ShowcaseSection = () => {
   };
 
   return (
-    <section id="showcase" className="bg-gradient-to-b from-metal-900 to-black py-0 md:py-0">
+    <section id="showcase" ref={sectionRef} className="bg-gradient-to-b from-metal-900 to-black py-0 md:py-0">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full reveal fade-bottom">

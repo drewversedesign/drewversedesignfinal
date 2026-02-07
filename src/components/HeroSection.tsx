@@ -9,16 +9,25 @@ const HeroSection = () => {
   const posterUrl = "https://github.com/drewversedesign/images-for-drewverse-website/blob/main/%20sample%20website%20designs%20by%20Drewverse%20Design.%20drewversedesign.online%20%20(6).png?raw=true";
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      if (!heroRef.current) return;
-      const scrollPosition = window.scrollY;
-      const opacity = 1 - scrollPosition / 700;
-      const translateY = scrollPosition * 0.5;
-      heroRef.current.style.opacity = Math.max(opacity, 0).toString();
-      heroRef.current.style.transform = `translateY(${translateY}px)`;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (heroRef.current) {
+            const scrollPosition = window.scrollY;
+            const opacity = 1 - scrollPosition / 700;
+            const translateY = scrollPosition * 0.5;
+            heroRef.current.style.opacity = Math.max(opacity, 0).toString();
+            heroRef.current.style.transform = `translateY(${translateY}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
