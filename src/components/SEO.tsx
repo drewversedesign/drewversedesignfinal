@@ -40,7 +40,7 @@ const SEO = ({
   const metaDescription = description || "DrewVerse Design is Uganda's premier digital agency specializing in custom web design, mobile apps, and branding solutions. Get affordable, professional web design services in Kampala, Uganda.";
   const metaImage = ogImage ? (ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`) : `${siteUrl}/lovable-uploads/dff2717d-6759-4360-ae3a-c7d8f959446f.png`;
   const url = canonicalUrl ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl}`) : siteUrl;
-  const metaKeywords = keywords || "web design uganda, digital agency kampala, mobile app development, UI/UX design, brand identity, web development east africa, DrewVerse Design, responsive websites, custom web solutions, digital marketing uganda, website development, SEO services, ecommerce websites, local business web design, affordable web design, web designer kampala, website company uganda, professional web design, modern website design, business website uganda";
+  const metaKeywords = keywords || "web design uganda, digital agency kampala, mobile app development, UI/UX design, brand identity, web development east africa, DrewVerse Design, responsive websites, custom web solutions, digital marketing uganda, website development, SEO services, ecommerce websites, local business web design, affordable web design, web designer kampala, website company uganda, professional web design, modern website design, business website uganda, web design prices in uganda, web hosting uganda, best web designers in uganda, e-commerce uganda";
 
   // Robots meta tag
   const robotsContent = noindex 
@@ -103,6 +103,8 @@ const SEO = ({
       <meta name="geo.placename" content="Kampala" />
       <meta name="geo.position" content="0.3476;32.5825" />
       <meta name="ICBM" content="0.3476, 32.5825" />
+      <meta name="distribution" content="global" />
+      <meta name="content-language" content="en-UG" />
       
       {/* Mobile optimization */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />

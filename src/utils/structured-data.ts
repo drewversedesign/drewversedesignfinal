@@ -12,15 +12,20 @@ export const organizationSchema = {
   "logo": "https://drewversedesign.online/lovable-uploads/9cdb49e9-d93a-4cea-bf17-a6252e912f14.png",
   "image": "https://drewversedesign.online/lovable-uploads/dff2717d-6759-4360-ae3a-c7d8f959446f.png",
   "description": "DrewVerse Design is a creative digital agency based in Kampala, Uganda specializing in custom web design, mobile apps, and branding solutions for businesses across East Africa and beyond.",
-  "telephone": "+256700000000",
+  "telephone": "+256-789-012-345",
   "email": "info@drewversedesign.online",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Kampala",
     "addressLocality": "Kampala",
-    "addressRegion": "Uganda",
-    "postalCode": "10001",
+    "addressRegion": "Central Region",
+    "postalCode": "00256",
     "addressCountry": "UG"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+256-789-012-345",
+    "contactType": "Customer Service"
   },
   "sameAs": [
     "https://twitter.com/drewversedesign",
@@ -117,7 +122,21 @@ export const websiteSchema = {
     "target": "https://drewversedesign.online/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
-  "inLanguage": "en-US"
+  "inLanguage": "en-UG"
+};
+
+export const getWebPageSchema = (page: { url: string; title: string; description: string; }) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": `https://drewversedesign.online${page.url}`,
+    "name": page.title,
+    "description": page.description,
+    "publisher": {
+      "@id": "https://drewversedesign.online/#organization"
+    },
+    "inLanguage": "en-UG"
+  };
 };
 
 export const servicesSchema = [
@@ -137,7 +156,7 @@ export const servicesSchema = [
         "latitude": "0.3476",
         "longitude": "32.5825"
       },
-      "geoRadius": "10000"
+      "geoRadius": "15000"
     },
     "offers": {
       "@type": "Offer",
@@ -162,7 +181,7 @@ export const servicesSchema = [
         "latitude": "0.3476",
         "longitude": "32.5825"
       },
-      "geoRadius": "10000"
+      "geoRadius": "15000"
     },
     "offers": {
       "@type": "Offer",
@@ -249,7 +268,7 @@ export const blogListingSchema = {
   "inLanguage": "en-US"
 };
 
-export const getBlogPostSchema = (post: any) => {
+export const getBlogPostSchema = (post: { title: string; description: string; date: string; image: string; id: string; content: string; keywords: string; }) => {
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -372,8 +391,8 @@ export const getLocalBusinessSchema = () => {
       "@type": "PostalAddress",
       "streetAddress": "Kampala",
       "addressLocality": "Kampala",
-      "addressRegion": "Uganda",
-      "postalCode": "10001",
+      "addressRegion": "Central Region",
+      "postalCode": "00256",
       "addressCountry": "UG"
     },
     "geo": {
@@ -382,7 +401,7 @@ export const getLocalBusinessSchema = () => {
       "longitude": "32.5825"
     },
     "url": "https://drewversedesign.online",
-    "telephone": "+256700000000",
+    "telephone": "+256-789-012-345",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -393,6 +412,7 @@ export const getLocalBusinessSchema = () => {
     ],
     "priceRange": "$$",
     "currenciesAccepted": "USD, UGX",
-    "paymentAccepted": "Cash, Credit Card, Bank Transfer"
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+    "hasMap": "https://www.google.com/maps/place/Kampala,+Uganda/@0.3136,32.5811,12z/data=!3m1!4b1!4m6!3m5!1s0x177dbc0f90fc968f:0x46326bfcd453535!8m2!3d0.3475964!4d32.5825197!16zL20vMGRxYjA?entry=ttu"
   };
 };
